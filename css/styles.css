@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 1;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;  /* Arrange aside and section horizontally */
+    padding: 1rem;
+    margin: 1rem;
+}
+
+aside {
+    width: 25%;
+    /* Adjust width as needed */
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    flex: 1;
+    /* Ensure section takes remaining space */
+    display: block;
+    /* Ensure content flows naturally */
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    border-top: 1px solid #ddd;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+form {
+    max-width: 400px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 0.5rem;
+}
+
+form input,
+form textarea,
+form button {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
+}
+
+article {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+article p {
+    line-height: 1.6;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#pagination {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Media query for small screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        /* Stack aside and section vertically */
+        padding: 10px;
+    }
+
+    aside {
+        width: 100%;
+        /* Take full width */
+        margin-right: 0;
+        /* No margin on smaller screens */
+        margin-bottom: 20px;
+        /* Add spacing between aside and section */
+    }
+
+    section {
+        width: 100%;
+        /* Take full width */
+    }
+}
+
+/* Normal link */
+a {
+    color: blue;
+    /* Standard blue for links */
+    text-decoration: underline;
+    /* Always show underline */
+}
+
+/* Visited link */
+main a:visited {
+    color: purple;
+    /* Dark purple for visited links */
+    text-decoration: underline;
+    /* Maintain underline */
+}
+
+/* Hover link */
+body a:hover {
+    color: darkblue;
+    /* Slightly darker blue for hover state */
+    text-decoration: underline;
+    /* Emphasize underline */
+}
+
+/* Active link */
+body a:active {
+    color: darkred;
+    /* Dark red to indicate the link is being clicked */
+    text-decoration: underline;
+    /* Keep underline */
+}
+
+/* Focus state for accessibility */
+body a:focus {
+    outline: 2px dashed darkblue;
+    /* Highlight outline for focus */
+    outline-offset: 2px;
+}
+
+/* Exclude links in the header and footer */
+header a,
+footer a {
+    color: inherit;
+    /* Use the parent element's color */
+    text-decoration: none;
+    /* Remove underline */
+}
