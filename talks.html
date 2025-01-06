@@ -21,13 +21,19 @@
     </header>
     <main>
         <section>
-            <h2>Latest Posts</h2>
-            <input type="text" id="search-bar" placeholder="Search blog posts..." onkeyup="filterBlogs()">
-            <ul id="blog-list">
-                <li class="blog-item"><a href="blogs/blog1.html">The Importance of Automated Testing</a></li>
-                <li class="blog-item"><a href="blogs/blog2.html">How to Write Effective Test Cases</a></li>
-                <li class="blog-item"><a href="blogs/blog3.html">Understanding End-to-End Testing</a></li>
+            <h2>Tech Talks: 2024 </h2>
+            <h3>qa-leadership-summit-winter-2024</h3>
+            <input type="text" id="search-bar" placeholder="Search tech talks..." onkeyup="filterBlogs()">
+            <ul id="tech-talk-list">
+                <li class="blog-item"><a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024">qa-leadership-summit-winter-2024</a></li>
             </ul>
+            <div class="preview-container">
+                <!-- Wrap the image in an <a> tag to make it clickable -->
+                <a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024" target="_blank">
+                    <img src="https://browserstack.wpenginepowered.com/wp-content/uploads/2024/10/Logo-QA.png"
+                        alt="QA Leadership Summit Winter 2024" class="preview">
+                </a>
+            </div>
             <div id="pagination">
                 <button onclick="changePage(-1)">Previous</button>
                 <span id="page-info"></span>
