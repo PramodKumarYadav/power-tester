@@ -9,15 +9,17 @@
 </head>
 
 <body>
-    <div id="header-container"></div>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+    <header data-testid="main-header">
+        <h1>Power Tester</h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/blogs.html">Blog</a>
+            <a href="/talks.html">Talks</a>
+            <a href="/videos.html">YouTube</a>
+        </nav>
+    </header>
     <main>
         <section>
             <h2>Tech Talks: 2024 </h2>
