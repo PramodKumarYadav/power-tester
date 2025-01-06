@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube</title>
+    <title>Power Tester</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Youtube Videos</h1>
+        <h1>Power Tester</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -22,63 +22,31 @@
     </header>
     <main>
         <section>
-            <h2>API Automation free tutorials</h2>
+            <h2>Project Zero: A guide to building a powerful test automation framework of any type [playlist of 57 free videos]</h2>
             <input type="text" id="search-bar" placeholder="Search tech talks..." onkeyup="filterBlogs()">
             <!-- YouTube video iframe -->
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/6iDK0Nsq7yg" title="YouTube video player"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/videoseries?si=T01OhV0uN56OmgLB&list=PLNky9jSTCKG3j0WwqMDFOrr3XMlaSsKOY"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div id="pagination">
-                <button onclick="changePage(-1)">Previous</button>
-                <span id="page-info"></span>
-                <button onclick="changePage(1)">Next</button>
-            </div>
+
+            <h2>RestPRO: A guide to building a robust, readable test automation framework for API Automation [playlist of 32 free
+                videos]</h2>
+            <input type="text" id="search-bar" placeholder="Search tech talks..." onkeyup="filterBlogs()">
+            <!-- YouTube video iframe -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/videoseries?si=Bpo5zYTtWlVBqh9f&list=PLNky9jSTCKG00lCUIMqSMDXnmMfA22VDd"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </section>
-       
     </main>
     <footer>
         <p>&copy; 2025 Power Tester</p>
-    </footer>
-    <script>
-        function filterBlogs() {
-            const searchInput = document.getElementById('search-bar').value.toLowerCase();
-            const blogs = document.querySelectorAll('#blog-list li');
-
-            blogs.forEach((blog) => {
-                const text = blog.textContent.toLowerCase();
-                blog.style.display = text.includes(searchInput) ? '' : 'none';
-            });
-        }
-    </script>
-    <script>
-        const blogsPerPage = 2;
-        let currentPage = 1;
-
-        function paginateBlogs() {
-            const blogItems = document.querySelectorAll('.blog-item');
-            const totalPages = Math.ceil(blogItems.length / blogsPerPage);
-
-            blogItems.forEach((item, index) => {
-                item.style.display =
-                    index >= (currentPage - 1) * blogsPerPage && index < currentPage * blogsPerPage
-                        ? ''
-                        : 'none';
-            });
-
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
-            document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
-        }
-
-        function changePage(direction) {
-            currentPage += direction;
-            paginateBlogs();
-        }
-
-        paginateBlogs();
-    </script>
-   
+    </footer>  
 </body>
 
 </html>
