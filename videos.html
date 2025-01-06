@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Talks</title>
+    <title>YouTube</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Our Blog</h1>
+        <h1>Youtube Videos</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -22,19 +22,13 @@
     </header>
     <main>
         <section>
-            <h2>Tech Talks: 2024 </h2>
-            <h3>qa-leadership-summit-winter-2024</h3>
+            <h2>API Automation free tutorials</h2>
             <input type="text" id="search-bar" placeholder="Search tech talks..." onkeyup="filterBlogs()">
-            <ul id="tech-talk-list">
-                <li class="blog-item"><a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024">qa-leadership-summit-winter-2024</a></li>
-            </ul>
-            <div class="preview-container">
-                <!-- Wrap the image in an <a> tag to make it clickable -->
-                <a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024" target="_blank">
-                    <img src="https://browserstack.wpenginepowered.com/wp-content/uploads/2024/10/Logo-QA.png"
-                        alt="QA Leadership Summit Winter 2024" class="preview">
-                </a>
-            </div>
+            <!-- YouTube video iframe -->
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/6iDK0Nsq7yg" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
             <div id="pagination">
                 <button onclick="changePage(-1)">Previous</button>
                 <span id="page-info"></span>
