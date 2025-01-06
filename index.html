@@ -22,6 +22,29 @@
     </header>
     <main data-testid="main">
         <section>
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+                (function () {
+                    var target = document.currentScript;
+                    window.addEventListener('load', function () {
+                        calendar.schedulingButton.load({
+                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1uSRjCNrWGMqHMxoBx9ZP0tI_KqmPeJmBNEApjs65Ny3y4FBRnEDP2WpUT9Qwlu-OBxYoF_brX?gv=true',
+                            color: '#039BE5',
+                            label: 'Book an appointment',
+                            target,
+                        });
+                    });
+                })();
+            </script>
+            <!-- end Google Calendar Appointment Scheduling -->
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1uSRjCNrWGMqHMxoBx9ZP0tI_KqmPeJmBNEApjs65Ny3y4FBRnEDP2WpUT9Qwlu-OBxYoF_brX?gv=true"
+                style="border: 0" width="100%" height="600" title="Google Calendar Appointment Scheduling">
+            </iframe>
+            <!-- end Google Calendar Appointment Scheduling -->
             <h2>Hourly Rate: Hire me as a full time consultant for your project.</h2>
             <p>
                 If you want to hire me as a full time consultant on a hourly rate for a fixed duration, please use the contact form to drop me an email with your contact details and I will get back to you as soon as possible.
@@ -51,6 +74,7 @@
                     <p>To help you derive meaningful metrices from your test runs </p>
                 </li>    
             </ol>
+            
         </section>    
     </main>
     <footer>
