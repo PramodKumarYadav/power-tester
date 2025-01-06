@@ -9,23 +9,21 @@
 </head>
 
 <body>
-    <header>
-        <h1>Power Tester</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blogs.html">Blog</a>
-            <a href="talks.html">Talks</a>
-            <a href="videos.html">YouTube</a>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
     <main>
         <section>
             <h2>Latest Posts</h2>
             <input type="text" id="search-bar" placeholder="Search blog posts..." onkeyup="filterBlogs()">
             <ul id="blog-list">
-                <li class="blog-item"><a href="blogs/blog1.html">Dummy article: The Importance of Automated Testing</a></li>
+                <li class="blog-item"><a href="blogs/blog1.html">The Repository Debate: Where should system or e2e tests live and why the location matters?</a></li>
                 <li class="blog-item"><a href="blogs/blog2.html">Dummy article: How to Write Effective Test Cases</a></li>
                 <li class="blog-item"><a href="blogs/blog3.html">Dummy article:Understanding End-to-End Testing</a></li>
             </ul>

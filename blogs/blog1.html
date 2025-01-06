@@ -9,16 +9,17 @@
 </head>
 
 <body>
-    <header>
-        <h1>Dummy article: The Importance of Automated Testing</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../about.html">About</a>
-            <a href="../contact.html">Contact</a>
-            <a href="../blogs.html">Blog</a>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
     <main>
+        <h2>The Repository Debate: Where should system or e2e tests live and why the location matters?</h2>
         <article>
             <p>Automated testing is a crucial part of modern software development. It allows developers to identify and
                 fix bugs quickly, ensuring a high-quality product. Automated tests save time and reduce manual effort,
