@@ -21,15 +21,50 @@
         </nav>
     </header>
     <main>
-        <h2>The best decision you can make to get rid of false positives due to expected code changes: Write your e2e tests inside app repository.</h2>
+        <h2>e2e tests location (in or outside app repo?) : The decision that can make or break your automation efforts.</h2>
         <iframe title="E2E Tests Location Diagram" style="width:100%;height:483px;"
             src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=e2e-tests-location.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fdesign%2Fe2e-tests-location.drawio">
         </iframe>
         <article>
+            <p>
+                An e2e or system test can typically fail because of below reasons:
+                <ol>
+                    <li>Test code issue: Application code changed but the test isn't updated yet or other test related reasons.</li>
+                    <li>Real bug in the application code</li>
+                    <li>Environment issue</li>
+                </ol>
+
+                What we really want to capture are issues of type 2 and type 3 (i.e. real bugs in the application code and environment issues). 
+                However, when the e2e tests live in an external repository than the application repository, they typically fail due to type 1 reasons. 
+            </p>
+            <p>
+                Lets explore some of the pros and cons of keeping e2e tests in the same repository vs keeping them in an external repository.
+            </p>
+            <h3>When e2e tests live in the same repository as the application repository</h3>
+            <h4>Pros</h4>
+            <ol>
+                <li>Code and test changes go hand in hand.</li>
+                <li>It is thus possible to make these tests as a part of Quality gate.</li>
+                <li>Results in zero to little test failures due to code changes in higher environments.</li>
+                <li>As a result, creates low noise and increased trust on tests.</li>
+                <li>As a result, results in low maintenance efforts. Even when the code changes are frequent</li>
+                <li>Tests are fixed when they are broken and only fail for right reasons (real bugs or env issues in higher environments).</li>
+                <li>Tests are pushed at the same time when they fail in a PR. Caught typically on a developers local machine or in a pull request.</li>
+                <li>Since these are typically created and maintained by developers, they scales really well as project grows.</li>
+            </ol>
+            <h4>cons</h4>
+            <ol>
+                <li>Need initial investment in terms of workshops and mentoring developers to help them understand how to work with test frameworks.</li>
+            </ol>
             <h3>When e2e tests live in an external repo than application repository</h3>
             <h4>Pros</h4>
             <ol>
-                <li>None that I can think of at the moment</li>
+                <li>I don't know if this should be called as a PRO but when QEs write and maintain the tests
+                    in their own external repo, team, typically they don't have to worry about educating and mentoring rest of teams 
+                    and developers about using these frameworks. This saved time and effort although may seem like a pro, but in long run
+                    it is nothing compared to the maintenance efforts this small team have to spend fixing these perpetual, 
+                    out-of-sync broken tests. 
+                </li>
             </ol>
             <h4>cons</h4>
             <ol>
@@ -40,24 +75,9 @@
                 <li>As a result, results in high maintenance efforts. Specially if the code changes are frequent</li>
                 <li>Tests are fixed after they are broken and due to wrong reasons.</li>
                 <li>Tests are pushed after they have already failed in the pipeline.</li>
-                <li>Typically e2e tests in outside repository are written and maintained by dedicated QA teams. 
-                    Which means they dont scale well with QA capacity over time.</li>
-            </ol>
-            <h3>When e2e tests live in the same repository as the application repository</h3>
-            <h4>Pros</h4>
-            <ol>
-                <li>Code and test changes go hand in hand.</li>
-                <li>It is thus possible to make these tests as a part of Quality gate.</li>
-                <li>Results in zero to little test failures due to code changes in higher environments.</li>
-                <li>As a result, creates low noise, and increase trust on tests.</li>
-                <li>As a result, results in low maintenance efforts. Even when the code changes are frequent</li>
-                <li>Tests are fixed when they are broken and only fail for right reasons (real bugs or env issues in higher environments).</li>
-                <li>Tests are pushed at the same time wheb they have fail in a PR. Typically on a developers local machine.</li>
-                <li>Since these are typically created and maintained by developers, it scales really well as project grows.</li>
-            </ol>
-            <h4>cons</h4>
-            <ol>
-                <li>Need initial investment in terms of workshops and mentoring developers to help them understand how to work with test frameworks.</li>
+                <li>Typically e2e tests in outside repository are written and maintained by dedicated QA teams.
+                     Which means they dont scale well with QA capacity over time.
+                </li>
             </ol>
         </article>
     </main>
