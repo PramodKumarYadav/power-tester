@@ -26,10 +26,39 @@
             src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=e2e-tests-location.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fdesign%2Fe2e-tests-location.drawio">
         </iframe>
         <article>
-            <p>Automated testing is a crucial part of modern software development. It allows developers to identify and
-                fix bugs quickly, ensuring a high-quality product. Automated tests save time and reduce manual effort,
-                especially in repetitive tasks. With tools like Selenium, Playwright, and Cypress, teams can streamline
-                their testing processes and achieve greater efficiency.</p>
+            <h3>When e2e tests live in an external repo than application repository</h3>
+            <h4>Pros</h4>
+            <ol>
+                <li>None that I can think of at the moment</li>
+            </ol>
+            <h4>cons</h4>
+            <ol>
+                <li>There is no good way to keep the tests in sync with application code changes.</li>
+                <li>Not possible to make these tests as a part of Quality gate due to above reason.</li>
+                <li>Results in a lot of false positives in tests.</li>
+                <li>As a result, creates more noise, brings down trust on tests.</li>
+                <li>As a result, results in high maintenance efforts. Specially if the code changes are frequent</li>
+                <li>Tests are fixed after they are broken and due to wrong reasons.</li>
+                <li>Tests are pushed after they have already failed in the pipeline.</li>
+                <li>Typically e2e tests in outside repository are written and maintained by dedicated QA teams. 
+                    Which means they dont scale well with QA capacity over time.</li>
+            </ol>
+            <h3>When e2e tests live in the same repository as the application repository</h3>
+            <h4>Pros</h4>
+            <ol>
+                <li>Code and test changes go hand in hand.</li>
+                <li>It is thus possible to make these tests as a part of Quality gate.</li>
+                <li>Results in zero to little test failures due to code changes in higher environments.</li>
+                <li>As a result, creates low noise, and increase trust on tests.</li>
+                <li>As a result, results in low maintenance efforts. Even when the code changes are frequent</li>
+                <li>Tests are fixed when they are broken and only fail for right reasons (real bugs or env issues in higher environments).</li>
+                <li>Tests are pushed at the same time wheb they have fail in a PR. Typically on a developers local machine.</li>
+                <li>Since these are typically created and maintained by developers, it scales really well as project grows.</li>
+            </ol>
+            <h4>cons</h4>
+            <ol>
+                <li>Need initial investment in terms of workshops and mentoring developers to help them understand how to work with test frameworks.</li>
+            </ol>
         </article>
     </main>
     <footer>
