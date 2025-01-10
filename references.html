@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Tester</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header data-testid="main-header">
+        <h1>Power Tester</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blogs.html">Blog</a>
+            <a href="talks.html">Talks</a>
+            <a href="videos.html">YouTube</a>
+            <a href="references.html">References</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>References</h2>
+            <input type="text" id="search-bar" placeholder="Search references..." onkeyup="filterReferences()">
+            <div id="books-section">
+                <h4>Books</h4>
+                <h5>Read and recommended</h5>
+                <ul id="read-recommended-list">
+                    <li class="reference-item"><a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a></li>
+                    <li class="reference-item"><a href="https://www.manning.com/books/learn-docker-in-a-month-of-lunches" target="_blank">Learn Docker in a month of lunches</a></li>
+                    <li class="reference-item">More to be updated...</li>
+                </ul>
+                <h5>Next in line</h5>
+                <ul id="next-in-line-list">
+                    <li class="reference-item"><a href="https://www.amazon.com/Accelerate-Building-Performing-Technology-Organizations/dp/B07BMBYHXL" target="_blank">Accelerate</a></li>
+                </ul>
+            </div>
+            <h3>Articles</h3>
+            <ul id="articles-list">
+                <li class="reference-item"><a href="https://trunkbaseddevelopment.com/" target="_blank">Trunk based development</a></li>
+                <li class="reference-item"><a href="https://continuousdelivery.com/" target="_blank">Continuous Delivery</a></li>
+                <li class="reference-item"><a href="https://martinfowler.com/bliki/BlueGreenDeployment.html" target="_blank">Blue Green Deployments</a></li>
+                <li class="reference-item"><a href="https://www.infoq.com/presentations/controlled-experiments/" target="_blank">A/B Testing</a></li>
+                <li class="reference-item">More to be updated...</li>
+            </ul>
+
+            <div id="pagination">
+                <button onclick="changePage(-1)">Previous</button>
+                <span id="page-info"></span>
+                <button onclick="changePage(1)">Next</button>
+            </div>
+        </section>
+        <script>
+            // Function to check and hide the books section dynamically
+            function checkBooksSection() {
+                const readRecommendedList = document.getElementById('read-recommended-list');
+                const nextInLineList = document.getElementById('next-in-line-list');
+                const booksSection = document.getElementById('books-section');
+
+                // Check if both lists are empty
+                const isReadRecommendedEmpty = Array.from(readRecommendedList.children).every(
+                    (item) => item.style.display === 'none'
+                );
+                const isNextInLineEmpty = Array.from(nextInLineList.children).every(
+                    (item) => item.style.display === 'none'
+                );
+
+                // Hide the books section if both lists are empty for the current page
+                if (isReadRecommendedEmpty && isNextInLineEmpty) {
+                    booksSection.style.display = 'none'; // Hide the block
+                } else {
+                    booksSection.style.display = 'block'; // Show the block
+                }
+            }
+
+            // Call the paginateReferences function on page load
+            document.addEventListener('DOMContentLoaded', paginateReferences);
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 Power Tester</p>
+    </footer>
+    <script>
+        function filterReferences() {
+            const searchInput = document.getElementById('search-bar').value.toLowerCase();
+            const references = document.querySelectorAll('#reference-list li');
+
+            references.forEach((reference) => {
+                const text = reference.textContent.toLowerCase();
+                reference.style.display = text.includes(searchInput) ? '' : 'none';
+            });
+        }
+    </script>
+    <script>
+        const referencesPerPage = 5;
+        let currentPage = 1;
+
+        // Modify paginateReferences to check the books section
+        function paginateReferences() {
+            const referenceItems = document.querySelectorAll('.reference-item');
+            const totalPages = Math.ceil(referenceItems.length / referencesPerPage);
+
+            referenceItems.forEach((item, index) => {
+                item.style.display =
+                    index >= (currentPage - 1) * referencesPerPage && index < currentPage * referencesPerPage
+                        ? ''
+                        : 'none';
+            });
+
+            // Update pagination info
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
+            document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
+
+            // Check the books section for the current page
+            checkBooksSection();
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            paginateReferences();
+        }
+
+        paginateReferences();
+    </script>
+   
+</body>
+
+</html>
