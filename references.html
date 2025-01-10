@@ -86,12 +86,18 @@
     <script>
         function filterReferences() {
             const searchInput = document.getElementById('search-bar').value.toLowerCase();
-            const references = document.querySelectorAll('#reference-list li');
 
+            // Select all list items in the relevant sections
+            const references = document.querySelectorAll('#read-recommended-list li, #next-in-line-list li, #articles-list li');
+
+            // Filter references based on the search input
             references.forEach((reference) => {
                 const text = reference.textContent.toLowerCase();
                 reference.style.display = text.includes(searchInput) ? '' : 'none';
             });
+
+            // Recheck visibility of the books section after filtering
+            checkBooksSection();
         }
     </script>
     <script>
