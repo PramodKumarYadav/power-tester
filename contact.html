@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Tester</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact-form.css">
 </head>
 
 <body>
@@ -13,38 +14,44 @@
         <h1>Power Tester</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blogs.html">Blog</a>
-            <a href="talks.html">Talks</a>
             <a href="videos.html">YouTube</a>
+            <a href="community.html">4TestCommunity</a>
+            <a href="contact.html">Contact</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="talks.html">Talks</a>
             <a href="references.html">References</a>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Book an appointment</h2>
-            <p>
-                Want to book a meeting right away?
-                <a href="https://calendar.app.google/KJgot1jWb7yvuatQ8" target="_blank"
-                    style="text-decoration: none; color: #0073e6; font-weight: bold;">
-                    Click here to schedule an appointment.
-                </a>
-            </p>
-            <h2>OR drop a query with your contact details!</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="highlight">
+                <h2>Business Appointments</h2>
+                <p>Providing expert QA consulting services to startups and enterprises. Let us help you scale your testing
+                    processes and improve quality outcomes.</p>
+                <a href="https://calendar.app.google/SzsYd8heBWS1gqWQ6" target="_blank" class="button">Book now to discover more!</a>
+            </div>
+            <div class="highlight">
+                <h2>Free QA Sparring Sessions</h2>
+                <p>Giving back to the QA community with free 20-minute sessions. Get advice on automation, career growth,
+                    and testing strategies.</p>
+                <a href="https://calendar.app.google/1oeQ6YTasRFpU6qW6" target="_blank" class="button">Book now to brainstorm together!</a>
+                
+            </div>
+            <div class="highlight">
+                <h2>Have a question? Drop a query!</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Send</button>
-            </form>
-            
+                    <button type="submit">Send</button>
+                </form>
+            </div>   
         </section>
     </main>
     <footer>
