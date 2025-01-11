@@ -10,34 +10,21 @@
 
 <body>
     <header data-testid="main-header">
-        <h1>Power Tester</h1>
+        <h1>Power Tester (articles)</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="videos.html">YouTube</a>
+            <a href="youtube.html">YouTube</a>
             <a href="community.html">4TestCommunity</a>
             <a href="contact.html">Contact</a>
-            <a href="blogs.html">Blogs</a>
             <a href="talks.html">Talks</a>
-            <a href="references.html">References</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="books.html">Books</a>
+            <a href="articles.html">Articles</a>
         </nav>
     </header>
     <main>
         <section>
-            <h2>References</h2>
-            <input type="text" id="search-bar" placeholder="Search references..." onkeyup="filterReferences()">          
-            <div id="books-section">
-                <h3>Books</h3>
-                <h5>Read and recommended</h5>
-                <ul id="read-recommended-list">
-                    <li class="reference-item"><a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a></li>
-                    <li class="reference-item"><a href="https://www.manning.com/books/learn-docker-in-a-month-of-lunches" target="_blank">Learn Docker in a month of lunches</a></li>
-                    <li class="reference-item">More to be updated...</li>
-                </ul>
-                <h5>Next in line</h5>
-                <ul id="next-in-line-list">
-                    <li class="reference-item"><a href="https://www.amazon.com/Accelerate-Building-Performing-Technology-Organizations/dp/B07BMBYHXL" target="_blank">Accelerate</a></li>
-                </ul>
-            </div>  
+            <input type="text" id="search-bar" placeholder="Search references..." onkeyup="filterReferences()">
             <div id="articles-section">
                 <h3>Articles</h3>
                 <ul id="articles-list">
@@ -58,29 +45,7 @@
             </div>
         </section>
         <script>
-            // Function to check and hide the books section dynamically
-            function checkBooksSection() {
-                const booksSection = document.getElementById('books-section');
-                const readRecommendedList = document.getElementById('read-recommended-list');
-                const nextInLineList = document.getElementById('next-in-line-list');      
-
-                // Check if both lists are empty
-                const isReadRecommendedEmpty = Array.from(readRecommendedList.children).every(
-                    (item) => item.style.display === 'none'
-                );
-                const isNextInLineEmpty = Array.from(nextInLineList.children).every(
-                    (item) => item.style.display === 'none'
-                );
-
-                // Hide the books section if both lists are empty for the current page
-                if (isReadRecommendedEmpty && isNextInLineEmpty) {
-                    booksSection.style.display = 'none'; // Hide the block
-                } else {
-                    booksSection.style.display = 'block'; // Show the block
-                }
-            }
-
-            // Function to check and hide the books section dynamically
+            // Function to check and hide the articles section dynamically
                 function checkArticlesSection() {
                     const articlesSection = document.getElementById('articles-section');
                     const articlesList = document.getElementById('articles-list');
@@ -110,7 +75,7 @@
             const searchInput = document.getElementById('search-bar').value.toLowerCase();
 
             // Select all list items in the relevant sections
-            const references = document.querySelectorAll('#read-recommended-list li, #next-in-line-list li, #articles-list li');
+            const references = document.querySelectorAll('#articles-list li');
 
             // Filter references based on the search input
             references.forEach((reference) => {
@@ -118,16 +83,15 @@
                 reference.style.display = text.includes(searchInput) ? '' : 'none';
             });
 
-            // Recheck visibility of the books section after filtering
-            checkBooksSection();
+            // Recheck visibility of the articles section after filtering
             checkArticlesSection();
         }
     </script>
     <script>
-        const referencesPerPage = 8;
+        const referencesPerPage = 10;
         let currentPage = 1;
 
-        // Modify paginateReferences to check the books section
+        // Modify paginateReferences to check the articles section
         function paginateReferences() {
             const referenceItems = document.querySelectorAll('.reference-item');
             const totalPages = Math.ceil(referenceItems.length / referencesPerPage);
@@ -144,8 +108,7 @@
             document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
             document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
 
-            // Check the books and articles section for the current page
-            checkBooksSection();
+            // Check the articles section for the current page
             checkArticlesSection();
         }
 
