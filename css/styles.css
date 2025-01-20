@@ -230,3 +230,34 @@ footer a {
     text-decoration: underline;
     color: #0073e6;
 }
+
+
+/* General styles for all images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Specific styles for blog icons */
+.blog-icon {
+    width: 50%;
+    /* Adjust as needed */
+    max-width: 600px;
+    /* Optional: limit the size */
+    margin: 20px auto;
+    /* Center the image and add spacing */
+    border: 1px solid #ddd;
+    /* Optional: add a border for better visibility */
+    border-radius: 4px;
+    /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: subtle shadow */
+}
+
+/* Ensure consistent layout for iframe */
+iframe {
+    width: 100%;
+    border: none;
+}
