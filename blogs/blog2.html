@@ -24,7 +24,7 @@
     </header>
     <main>
         <h2>Playwright Tests: Yes, you can finish ALL your playwright tests in 2 to 5 mins!</h2>
-        <img src="../images/3k-tests-in-90-seconds.png" alt="3k-tests-in-90-seconds" class="blog-icon" style="width: 40%;">
+        <img src="../images/3k-tests-in-90-seconds.png" alt="3k-tests-in-90-seconds" class="blog-icon" style="width: 55%;">
 
         <article>
             <h3>Context</h3>
@@ -37,28 +37,33 @@
             <h3>Problem Statement</h3>
             <p>Even though this seems like a good approach on paper, there are two major issues with this approach:</p>
             <ol>
-                <li>When there are micro PRs with test fixes which just adds one or few tests, it would spin up all the runners (shards). So runners count is not dynamic or test load aware. </li>
-                <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 50%;">
-
-                <li>Even though tests are evenly distributed in terms of numbers, not all tests take equal time. 
-                    And since playwright sharding has no clue how much time each test takes, it may end up clubbing long running tests together thus 
-                    taking a overall high test run time, even when there are high number of runners added. 
-                    This will be extremelly inefficient since some runners will be underutilised and some will be long running. Eventually your test run time is the one that your slowest runner takes.
+                <li>Even though playwright sharding evenly distributes tests, in terms of numbers, not all tests take equal time. 
+                    And since playwright sharding has no clue how much time each test takes, it will often end up creating uneven test run distribution on different runners in terms of execution time. 
+                    This means, there will be some runners that will finish early and some that will finish late.
+                     Eventually your total test run time will be bottlenecked due to the slowest running runner.
                 </li>
                 <img src="../images/uneven-test-run.png" alt="uneven-test-run" class="blog-icon" style="width: 50%;"> 
+                <li>At other times, if you use a reusable workflow, then when there are micro PRs with just a few tests touched in them, 
+                    your reusable workflow would still spin up all the runners (shards). So essentially you would be wasting runner minutes
+                and increasing cost for your company for no apparent good reason. </li>
+                <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 50%;">
+
             <h3>Desired Solution</h3>
             <p>A desired solution would involve creating a dynamic test sharding mechanism that is aware of how much time each test takes and depending on the load of tests and 
                 desired total execution time, creates required runners at the run time. 
-                That means, if we only touch a few tests and want to finish them in 1 or 2 mins, then we only need to spin up runners that 
-                can finish all tests in 1 or 2 mins (say one or two).
                 <br>
-                <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon" style="width: 50%;">
+                That means, if we have a lot of tests to run, then based on the desired total execution time, we can calculate the exact required runners 
+                and spin them up and distribute the test load evenly, so that there are no bottlenecks. 
                 <br>
-                And if we have a lot of tests to run, then again based on the desired total execution time, if we can spin up runners 
-                accordingly and distribute the test load evenly, so that there are no bottlenecks, that would be desirable. 
                 <img src="../images/dynamic-runners-for-dynamic-load.png" alt="dynamic-runners-for-dynamic-load" class="blog-icon" style="width: 45%;">
+                <br>
+                It also means, that if we only touch a few tests and want to finish them in 1 or 2 mins, then we only need to spin up a runner or two,
+                to finish all tests in 1 or 2 mins.
+                <br>
+                <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon"
+                    style="width: 50%;">
             </p>
-            <h3>Actual Solution Design</h3>
+            <h3>Solution Design</h3>
             <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
                 src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=finish-tests-in-x-mins.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Ffinish-tests-in-x-mins.drawio">
             </iframe>
@@ -102,6 +107,11 @@
                         </ol>
                     </li>
                 </ul>     
+            </p>
+            <h3>Actual Solution</h3>
+            <p>
+                TODO: Add here the reference to the actual solution (custom github action and caller workflow code that is required to make all pieces work together).
+                NOTE: The solution is ready and only the document needs to be updated. Will be published soon. 
             </p>
             <h3>Reference</h3>
             <p>
