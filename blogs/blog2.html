@@ -24,6 +24,8 @@
     </header>
     <main>
         <h2>Playwright Tests: Yes, you can finish ALL your playwright tests in 2 to 5 mins!</h2>
+        <img src="../images/3k-tests-in-90-seconds.png" alt="3k-tests-in-90-seconds" class="blog-icon" style="width: 40%;">
+
         <article>
             <h3>Context</h3>
             <p>Tools like playwright provide options to distribute tests on multiple machines via sharding. This is typically achieved by: 
@@ -36,68 +38,71 @@
             <p>Even though this seems like a good approach on paper, there are two major issues with this approach:</p>
             <ol>
                 <li>When there are micro PRs with test fixes which just adds one or few tests, it would spin up all the runners (shards). So runners count is not dynamic or test load aware. </li>
-                <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 40%;">
+                <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 50%;">
 
                 <li>Even though tests are evenly distributed in terms of numbers, not all tests take equal time. 
                     And since playwright sharding has no clue how much time each test takes, it may end up clubbing long running tests together thus 
                     taking a overall high test run time, even when there are high number of runners added. 
                     This will be extremelly inefficient since some runners will be underutilised and some will be long running. Eventually your test run time is the one that your slowest runner takes.
                 </li>
-                <img src="../images/uneven-test-run.png" alt="uneven-test-run" class="blog-icon" style="width: 60%;"> 
+                <img src="../images/uneven-test-run.png" alt="uneven-test-run" class="blog-icon" style="width: 50%;"> 
             <h3>Desired Solution</h3>
             <p>A desired solution would involve creating a dynamic test sharding mechanism that is aware of how much time each test takes and depending on the load of tests and 
                 desired total execution time, creates required runners at the run time. 
                 That means, if we only touch a few tests and want to finish them in 1 or 2 mins, then we only need to spin up runners that 
                 can finish all tests in 1 or 2 mins (say one or two).
                 <br>
-                <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon" style="width: 35%;">
+                <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon" style="width: 50%;">
                 <br>
                 And if we have a lot of tests to run, then again based on the desired total execution time, if we can spin up runners 
                 accordingly and distribute the test load evenly, so that there are no bottlenecks, that would be desirable. 
                 <img src="../images/dynamic-runners-for-dynamic-load.png" alt="dynamic-runners-for-dynamic-load" class="blog-icon" style="width: 45%;">
             </p>
             <h3>Actual Solution Design</h3>
-            <p>Below is a diagram that explains how we can achieve this dynamic test sharding mechanism:
+            <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
+                src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=finish-tests-in-x-mins.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Ffinish-tests-in-x-mins.drawio">
+            </iframe>
+            <p>Below is a explain of how the above solution works:
                 The key components of this design are:
+                <h4>STATE.JSON</h4>  
                 <ol>
-                    <li>state.json: 
-                        <ol>
-                            <li>This file should contain a map of each test case and the time it took to run on the local machine. </li>
-                            <li>The updated tests should run automatically when a developer tries to commit these tests (using pre-commit hooks). </li>
-                            <li>File should be automatially created after each test run (using a custom runner) that runs automatically after each run.</li>
-                            <li>And by committing this file automatically (using a post-commit hook).</li>
-                        </ol> 
-                    </li>
-                    <li>A GitHub action: 
-                        <h4>Inputs:</h4>
+                    <li>This file should contain a map of each test case and the time it took to run on the local machine. </li>
+                    <li>The updated tests should run automatically when a developer tries to commit these tests (using pre-commit hooks). </li>
+                    <li>File should be automatially created after each test run (using a custom runner) that runs automatically after each run.</li>
+                    <li>And by committing this file automatically (using a post-commit hook).</li>
+                </ol> 
+                <h4>A Custom GitHub action</h4>
+                <ul>
+                    <li> INPUTS: 
                         <ol>
                             <li> A custom github action that takes users wishes to finish test in (x mins). </li>
                             <li>Takes the command to run </li>
                             <li>Considers the cores of the runner machine to decide workers </li>
                             <li>Considers the cores of the runner machine to decide workers </li>
                         </ol>
-                        <h4>References:</h4>
+                    </li>
+                    <li> REFERENCES 
                         <ol>
                             <li>Considers the state.json to undrestand time each test takes to finish</li>
                             <li>Considers the cores of the runner machine to decide the workers that can be safely used for parallel run</li>
                         </ol>
-                        <h4>Outputs:</h4>
+                    </li>
+                    <li> OUTPUTS 
                         <ol>
                             <li> A dynamic matrix strategy that gives runner count to run tests. ex: ["1","2", "3"] </li>
-                            <li> A test load distribution json document that gives a mapping of tests and their respectie projects to run under each runner </li>
+                            <li> A test load distribution json document that gives a mapping of tests and their respectie projects to run under
+                                each runner </li>
                             <li> The number of workers to use for parallel execution, based on cores of runners to use</li>
                         </ol>
                     </li>
-                    <li>Caller workflow: 
+                    <li>CALLER WORKFLOW:
                         <ol>
                             <li> This workflow will use the above variables to run tests efficiently on different runners </li>
                             <li> Create and publish a consolidated html report </li>
                         </ol>
                     </li>
+                </ul>     
             </p>
-            <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
-                src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=finish-tests-in-x-mins.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Ffinish-tests-in-x-mins.drawio">
-            </iframe>
             <h3>Reference</h3>
             <p>
                 Reference spreadseheet: 
