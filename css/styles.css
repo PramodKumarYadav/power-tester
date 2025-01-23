@@ -231,15 +231,6 @@ footer a {
     color: #0073e6;
 }
 
-
-/* General styles for all images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
 /* Specific styles for blog icons */
 .blog-icon {
     width: 50%;
