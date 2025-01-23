@@ -33,11 +33,17 @@
                 However there are two main problems with it:
             <ol>
                 <h4>Sharding is not aware of how much time each test takes.</h4>
-                <li>Even though playwright sharding evenly distributes tests, as explained here in the article about 
+                <li>Even though playwright sharding tries to evenly distributes tests, as explained here in the article about 
                      <a href="" https://playwright.dev/docs/test-sharding#balancing-shards" target="_blank">Balancing Shards</a>, in terms of execution time, not all tests take equal time. 
-                    And since playwright sharding has no clue how much time each test takes, it will often end up creating uneven test run distribution on different runners in terms of execution time. 
-                    This means, there will be some runners that will finish early and some that will finish late.
-                     Eventually your total test run time will be bottlenecked due to the slowest running runner.
+                    <p>
+                        And since playwright sharding does not keep a track of time each test takes, this means, there will be some runners that will finish early and some that will finish late.
+                        Eventually your total test run time will be bottlenecked due to the slowest running tests.
+                    </p>
+
+                    <p>
+                        Often the only way team tries to bring down total exeuction time is by increasing the number of runners, which increases both the cost but also the waste per runner since not all runners are utilized to their full potential.
+                    </p>
+
                 </li>
                 <img src="../images/uneven-test-run.png" alt="uneven-test-run" class="blog-icon" style="width: 50%;"> 
                 <h4>No examples of dynamic scaling of runners</h4>
@@ -46,6 +52,10 @@
                     to show how to define runners for sharding. However, since often the same reusable workflow is used to run all tests, 
                     and test fixes, there are times, when the number of tests touched are very few, but the reusable workflow will still spin up all the runners.
                     This results into a lot of wasted resources and money.
+                    <p>
+                        NOTE: As mentioned in previous point, since team often tries to increase the runners to bring down execution time, 
+                        it means, the waste is very high, if the team does not have a way to scale runners down, when only fixing a few broken tests.
+                    </p>
                 </li>
                 <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 50%;">
             </ol>
@@ -53,15 +63,16 @@
             <h3>Desired Solution</h3>
             <p>A desired solution would involve creating a dynamic test sharding mechanism that is aware of how much time each test takes and depending on the load of tests and 
                 desired total execution time, creates required runners at the run time. 
-                <br>
-                That means, if we have a lot of tests to run, then based on the desired total execution time, we can calculate the exact required runners 
-                and spin them up and distribute the test load evenly, so that there are no bottlenecks. 
-                <br>
+                <p>
+                    This means, if we have a lot of tests to run, then based on the desired total execution time, we can create bundles of tests based on their run time, 
+                    and create as many runners as required to cover all tests in the given time. In this model, one runner may run 20 small tests where another may run only 2 big tests.
+                    Where each runner, does not surpass the total execution time limit (of say 2 mins)
+                </p>
                 <img src="../images/dynamic-runners-for-dynamic-load.png" alt="dynamic-runners-for-dynamic-load" class="blog-icon" style="width: 45%;">
-                <br>
-                It also means, that if we only touch a few tests and want to finish them in 1 or 2 mins, then we only need to spin up a runner or two,
-                to finish all tests in 1 or 2 mins.
-                <br>
+                <p>
+                    It also means, that if we only touch a few tests and want to finish them in 1 or 2 mins, then we only need to spin up the bare minimum runners
+                    to finish all tests in 1 or 2 mins.
+                </p>
                 <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon"
                     style="width: 50%;">
             </p>
@@ -112,14 +123,20 @@
             </p>
             <h3>Actual Solution</h3>
             <p>
-                TODO: Add here the reference to the actual solution (custom github action and caller workflow code that is required to make all pieces work together).
-                NOTE: The solution is ready and only the document needs to be updated. Will be published soon. 
+                Here is the reference to the actual solution 
+                <a href="https://github.com/PramodKumarYadav/runwright"
+                    target="_blank">RunWright
+                </a>
+                (a custom github action and caller workflow code example), that shows how different pieces come together to make it all
+                work).
+                
             </p>
             <h3>Reference</h3>
             <p>
                 Reference spreadseheet: 
                 <a href="https://docs.google.com/spreadsheets/d/18MjzNY7tWU-RtO3osJ9ebYEAR6kHJ7mXUXVFBcFEMAs/edit?usp=sharing"
-                    target="_blank">Spreadsheet</a> 
+                    target="_blank">Spreadsheet
+                </a> 
             </p>
         </article>
     </main>
