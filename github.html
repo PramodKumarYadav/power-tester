@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Tester</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header data-testid="main-header">
+        <h1>Power Tester (github)</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="youtube.html">YouTube</a>
+            <a href="github.html">GitHub</a>
+            <a href="community.html">4TestCommunity</a>
+            <a href="contact.html">Contact</a>
+            <a href="talks.html">Talks</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="books.html">Books</a>
+            <a href="articles.html">Articles</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>RunWright: A GitHub action that allows you to finish your tests in x mins (that you decide)</h2>
+            <h4>NOTE: This is the latest and recommended action for running playwright tests in CI</h4>
+            <p>
+                RunWright is a free, open source and the only known GitHub action (at the time of writing this document) that allows you to upfront decide how long you want your
+                tests to finish. It also allows you to auto scale github runners based on the test load (not just based on test count but also based on how much time each test takes).
+                <br>
+                <a href="https://github.com/marketplace/actions/runwright" target="_blank">Checkout RunWright on GitHub marketplace now!</a>
+            </p>
+
+        <h2>playwright-load-balancer-based-on-changed-files: A GitHub action to load balance runners based on changed files and playwright Sharding</h2>
+        <p>
+            playwright-load-balancer-based-on-changed-files plugin is meant to dynamically scale runners up or down based on the test files touched as a part of 
+            pull request. It further uses playwright sharding to distribute the tests across the runners. 
+            <br>
+            <a href="https://github.com/marketplace/actions/playwright-load-balancer-based-on-changed-files" target="_blank">Checkout playwright-load-balancer-based-on-changed-files on GitHub marketplace
+                now!</a>
+        </p>
+        <h2>playwright-load-balancer-based-on-tests-to-run: A GitHub action to load balance runners based on tests to run in a workflow and
+            playwright Sharding</h2>
+        <p>
+            playwright-load-balancer-based-on-tests-to-run plugin is meant to dynamically scale runners up or down based on the
+            tests to run as a part of a workflow. It further uses playwright sharding to distribute the tests across the runners.
+            <br>
+            <a href="https://github.com/marketplace/actions/playwright-load-balancer-based-on-tests-to-run"
+                target="_blank">Checkout playwright-load-balancer-based-on-tests-to-run on GitHub marketplace
+                now!</a>
+        </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Power Tester</p>
+    </footer>  
+</body>
+
+</html>
