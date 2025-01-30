@@ -28,18 +28,23 @@
             <input type="text" id="search-bar" placeholder="Search blog posts..." onkeyup="filterBlogs()">
             <ul id="blog-list">
                 <li class="blog-item">
-                    <a href="blogs/blog1.html">Test Location: The single most imp factor that can make or break your test automation efforts</a>
+                    <a href="blogs/test-location-matters.html">Test Location: The single most imp factor that can make or break your test automation efforts</a>
                     <iframe title="E2E Tests Location Diagram" style="width:100%;height:483px;"
                         src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=e2e-tests-location.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fdesign%2Fe2e-tests-location.drawio">
                     </iframe>
                 </li>
                 <li class="blog-item">
-                    <a href="blogs/blog2.html">Yes, you can finish ALL your PlayWright tests in 2 to 5 mins. Here is how.</a>
+                    <a href="blogs/finish-fast-in-2-mins.html">Yes, you can finish ALL your PlayWright tests in 2 to 5 mins. Here is how.</a>
                     <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
                         src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=finish-tests-in-x-mins.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Ffinish-tests-in-x-mins.drawio">
                     </iframe>
                 </li>
-                <li class="blog-item"><a href="blogs/blog3.html">Dummy article:Understanding End-to-End Testing</a></li>
+                <li class="blog-item">
+                    <a href="blogs/test-run-goals.html">Test Run: Goals and Objectives</a>
+                    <iframe title="Test Run Goals and Objectives" style="width:100%;height:873px;"
+                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=test-run-goals-and-objectives.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fgoals%2Ftest-run-goals-and-objectives.drawio">
+                    </iframe>
+                </li>
             </ul>
             <div id="pagination">
                 <button onclick="changePage(-1)">Previous</button>
@@ -63,7 +68,7 @@
         }
     </script>
     <script>
-        const blogsPerPage = 2;
+        const blogsPerPage = 5;
         let currentPage = 1;
 
         function paginateBlogs() {
