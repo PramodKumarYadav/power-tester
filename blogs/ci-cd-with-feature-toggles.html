@@ -25,11 +25,60 @@
     </header>
     <main>
         <article>
-            <h2>CI-CD-with-feature-toggles: And a focus on test and quality gates!</h2>
-            <iframe title="CI CD with feature toggles and a focus on test and quality gates" frameborder="0"
+            <h2>Continuous testing in a CICD setup with feature flags!</h2>
+            <iframe title="Continuous testing in a CICD setup with feature flags" frameborder="0"
                 style="width:100%;height:1783px;"
                 src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ci-cd-with-feature-toggles.drawio&dark=auto#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Fci-cd-with-feature-toggles.drawio">
             </iframe>
+            <p>Traditionally, the only way to "release" new features to customers is by "deploying" the source code of new feature to production. 
+                The release and deployment happens at the same time and are thus tightly coupled. 
+                
+                A feature toggling tool such as LaunchDarkly, allows teams to decouple the release and deployment of new features.
+                This means, the team can deploy the code of new feature to production, but not release it to customers.
+                
+                This decoupling brings in a lot of flexibility and benefits to the team, Such as, Having separate goals for deployment (done via CICD pipelines) and releases (done via LaunchDarkly).
+                <h3>Deployment Goals!</h3>
+                <ol>
+                    <li>Don't introduce new issues or vulnerabilites in our systems while bringing in new features.</li>
+                    <ol>
+                        <li>Formating checks should pass.</li>
+                        <li>Linting checks should pass.</li>
+                        <li>Security scans should not have any high or critical vulnerabilities <=7 rating.</li>
+                        <li>License checks should be compliant with open source standards.</li>
+                        <li>Integration tests should pass.</li>
+                    </ol>
+                    <li>Don't break or degrade existing functionality.</li>
+                    <ol>
+                        <li>All unit tests should pass.</li>
+                        <li>All integration tests should pass.</li>
+                        <li>All existing system/service tests should pass.</li>
+                        <li>Test coverage should not drop below a team threshold (of say 80%).</li>
+                    </ol>
+                </ol>
+                <h3>Release Goals!</h3>
+                <ol>
+                    <li>New functionality meets expectations and is ready to be released.</li>
+                    <ol>
+                        <li>Functional testing is successful.</li>
+                        <li>Exploratory testing is successful.</li>
+                        <li>Performance testing is successful.</li>
+                        <li>Business Acceptance testing is successful.</li>
+                    </ol>
+                </ol>
+                <h3>Potential benefits of decoupled release and deployments!</h3>
+                <ol>
+                    <li>Simple and risk free Trunk Based Development.</li>
+                    <li>Potential to deploy to production multiple times a day without accidentally releasing half-baked features to customers.</li>
+                    <li>Potential to release on demand, when ready.</li>
+                    <li>Potential to soft rollback (by hiding the faulty functionality from customer) on click of a button.</li>
+                    <li>No need to do hotfixes. Faults can be fixed carefully, without under pressure, and same as any other feature or bugfix.</li>
+                    <li>Simplified release process.</li>
+                    <li>Simplified and standardized deployment process for any and all kind of changes.</li>
+                    <li>Potential to do A/B testing and canary releases in production.</li>
+                    <li>No need for multiple test environments (dev, test, staging).</li>
+                    <li>Potentially one Test environment with targetting rules set in LaunchDarkly should be sufficient to cover all scenarios.</li>
+                </ol>
+            </p>
         </article>
     </main>
     <footer>
