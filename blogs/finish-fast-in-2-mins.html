@@ -68,13 +68,17 @@
                     <p>
                         <b>Result:</b> As a result, tests give <b style="color: red;">false positives</b> and often fail because of new changes and not because there are bugs in
                         the code.
+                    </p>
+                    <p>
                         <b style="color: red;">This corrodes the trust for tests in the team.</b>
                     </p>
                 </li>  
                 <li>
                     <h4>Consequence: QAs in the team hence often spend most of their time fixing these "false positives".</h4>
                     <p>
-                        <b>Result:</b> As a result, this gives them <b style="color: red;">Test maintenance fatigue and heavily bring down their morale and impact on the product</b>. QAs find themselves in this never ending cycle of
+                        <b>Result:</b> As a result, this gives testers <b style="color: red;">"Test maintenance fatigue" and heavily bring down their morale and their ability to have a real impact on the product</b>. 
+                    </p>
+                    <p>QAs find themselves in this never ending cycle of
                         fixing broken tests, that bring little value to the team and <b style="color: red;"> leave them with little time to actually test the new features or add
                         new
                         tests.</b>
@@ -83,7 +87,7 @@
                 <li>
                     <h4>Consequence: Buying more infrastructure has diminishing results with increased costs.</h4>
                     <p>
-                        As we saw earlier, with existing solutions, adding more infrastructure has <b style="color: red;">a diminishing effect on overall test execution speed and a direct relation to increased waste (inefficiencies) and costs.</b>
+                        As we saw earlier, with existing solutions, <b style="color: red;">adding more infrastructure has a diminishing effect on overall test run time and has a direct relation to increased waste (inefficiencies) and costs.</b>
                     </p>
                 </li>
             </ol>
@@ -103,6 +107,34 @@
                 </p>
                 <img src="../images/less-runnes-for-less-load.png" alt="less-runnes-for-less-load" class="blog-icon"
                     style="width: 50%;">
+            </p>
+            <h3>Consequences and results</h3>
+            <ol>
+                <li>
+                    <h4>Consequence: Teams can now run their system tests as a part of their pull requests since now they control how long it should take for their test run to finish.</h4>
+                    <p>
+                        <b>Result:</b> As a result, developers get a feedback in their PR and can fix the broken tests as a part of their pull requests. This results into tests that gives <b style="color: blue;">true positives</b> once they are merged in the main branch.
+                    </p>
+                    <p>
+                        <b style="color: blue;">This should considerably improve the trust for tests in the team.</b>
+                    </p>
+                </li>
+                <li>
+                    <h4>Consequence: Since maintenance is now distributed among all developers, QAs in the team actually have time to do more meaningful activities.</h4>
+                    <p>
+                        <b>Result:</b> By making everyone responsible for fixing the tests that are breaking due to their own changes, we create a model that scales better with time.</b>
+                    </p>
+                    <p><b style="color: blue;"> This eliminates the root cause for test maintenance fatigue. Not only developers get timely feedback on their breaking changes but now QAs also find time to test and explore the
+                    application, write missing automated tests, and mentor team members by taking workshops and reviewing pull requests</b>
+                    </p>
+                </li>
+                <li>
+                    <h4>Consequence: We have a system that scales infra up or down based on the demand and scales well with test scope.</h4>
+                    <p>
+                        Since our solution is time aware of each test, and dynamically scales infrastructure up or down based on test scope, <b style="color: blue;"> we now have a system, where we pay for what we use, eliminate waste and still keep our test run time within our acceptable time limits.</b>
+                    </p>
+                </li>
+            </ol>
             </p>
             <h3>Solution Design</h3>
             <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
