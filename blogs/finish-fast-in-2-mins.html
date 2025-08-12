@@ -61,6 +61,33 @@
                 <img src="../images/too-many-runners.png" alt="too-many-runners" class="blog-icon" style="width: 50%;">
             </ol>
             </p>
+            <h3>Consequences and results</h3>
+            <ol>
+                <li>
+                    <h4>Consequence: Teams do not run system tests as a part of their pull requests but after its already merged in the main branch.</h4>
+                    <p>
+                        <b>Result:</b> As a result, tests give <b style="color: red;">false positives</b> and often fail because of new changes and not because there are bugs in
+                        the code.
+                        <b style="color: red;">This corrodes the trust for tests in the team.</b>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Consequence: QAs in the team hence often spend most of their time fixing these "false positives".</h4>
+                    <p>
+                        <b>Result:</b> As a result, this gives them <b style="color: red;">Test maintenance fatigue and heavily bring down their morale and impact on the product</b>. QAs find themselves in this never ending cycle of
+                        fixing broken tests, that bring little value to the team and <b style="color: red;"> leave them with little time to actually test the new features or add
+                        new
+                        tests.</b>
+                    </p>
+                </li>
+                <li>
+                    <h4>Consequence: Buying more infrastructure has diminishing results with increased costs.</h4>
+                    <p>
+                        As we saw earlier, with existing solutions, adding more infrastructure has <b style="color: red;">a diminishing effect on overall test execution speed and a direct relation to increased waste (inefficiencies) and costs.</b>
+                    </p>
+                </li>
+            </ol>
+            </p>
             <h3>Desired Solution</h3>
             <p>A desired solution would involve creating a dynamic test sharding mechanism that is aware of how much time each test takes and depending on the load of tests and 
                 desired total execution time, creates required runners at the run time. 
