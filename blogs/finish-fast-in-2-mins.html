@@ -35,21 +35,21 @@
             <ol>
                 <h4>Sharding is not aware of how much time each test takes.</h4>
                 <li>Even though playwright sharding tries to evenly distributes tests, as explained here in the article about 
-                     <a href="" https://playwright.dev/docs/test-sharding#balancing-shards" target="_blank">Balancing Shards</a>, in terms of execution time, not all tests take equal time. 
+                     <a href="https://playwright.dev/docs/test-sharding#balancing-shards" target="_blank">Balancing Shards</a>, in terms of execution time, not all tests take equal time. 
                     <p>
                         And since playwright sharding does not keep a track of time each test takes, this means, there will be some runners that will finish early and some that will finish late.
                         Eventually your total test run time will be bottlenecked due to the slowest running tests.
                     </p>
 
                     <p>
-                        Often the only way team tries to bring down total exeuction time is by increasing the number of runners, which increases both the cost but also the waste per runner since not all runners are utilized to their full potential.
+                        Often the only way team tries to bring down total execution time is by increasing the number of runners, which increases both the cost but also the waste per runner since not all runners are utilized to their full potential.
                     </p>
 
                 </li>
                 <img src="../images/uneven-test-run.png" alt="uneven-test-run" class="blog-icon" style="width: 50%;"> 
                 <h4>No examples of dynamic scaling of runners</h4>
                 <li>Playwright provides a 
-                    <a href="" https://playwright.dev/docs/test-sharding#github-actions-example" target="_blank">Github Actions Example</a>
+                    <a href="https://playwright.dev/docs/test-sharding#github-actions-example" target="_blank">Github Actions Example</a>
                     to show how to define runners for sharding. However, since often the same reusable workflow is used to run all tests, 
                     and test fixes, there are times, when the number of tests touched are very few, but the reusable workflow will still spin up all the runners.
                     This results into a lot of wasted resources and money.
