@@ -1,81 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester<textarea name="" id=""></textarea>ester</title>
+    <title>Community — Power Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester (for test community)</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="youtube.html">YouTube</a>
-            <a href="github.html">GitHub</a>
-            <a href="community.html">4TestCommunity</a>
-            <a href="contact.html">Contact</a>
-            <a href="talks.html">Talks</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="books.html">Books</a>
-            <a href="articles.html">Articles</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html" class="active">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main data-testid="main">
-        <section>
-            
-            <h2>Free sparring sessions</h2>
-            <p>
-                I’m offering free 20-minute sessions to QAs to discuss topics related to testing, automation or anything revolving around it.
-            </p>
-            
-            <h3>Potential Topics</h3>
-            <ul>
-                <li>Automation best practices.</li>
-                <li>Brainstorm project specific challenges.</li>
-                <li>Career guidance for QA professionals.</li>
-                <li>Improving test strategies and potential tool choices.</li>
-            </ul>
 
-            <h3>Book Your Free Session</h3>
-            <div class="highlight">
-                <p>You can book your session now! Some things we can do to make these sessions most productive are:</p>
-                <ul>
-                    <li>Kindly book only one slot, so that others can get a chance too!</li>
-                    <li>Kindly show up for a session, if you do book a session.</li>
-                    <li>If you cannot make it to a session, either cancel it in advance or let me know so that I can free up the slot for others.</li>
-                    <li>If you need my services for business opportunities (hiring me), book a slot from the business calendar on Home Page or Contact page.</li>
-                </ul>
-            </div>
-            <div class="note">
-                🚫 Below facility to book an appointment is temporarily unavailable because I have started with a new job and no longer have these free time slots to offer.
-            </div>
-            <!-- Google Calendar Appointment Scheduling begin -->
-            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-            <script>
-                (function () {
-                    var target = document.currentScript;
-                    window.addEventListener('load', function () {
-                        calendar.schedulingButton.load({
-                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Iw8FGV5lcAIBKpGynvnoqMs8YT75BnQasy3U5qZxhEBCd1mJSzYFpLORYwIZyaL8JMBRmvgNV?gv=true',
-                            color: '#039BE5',
-                            label: 'Book an appointment',
-                            target,
+    <div class="page-hero">
+        <h1><i class="fas fa-users" style="color:var(--primary);margin-right:.5rem;"></i> For the QA Community</h1>
+        <p>Giving back to the community that helped shape my career. Free sessions, open resources, and genuine mentorship.</p>
+    </div>
+
+    <main data-testid="main">
+        <section class="section">
+            <div class="container" style="max-width:800px;">
+
+                <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+                    <span class="section-label">Free Sessions</span>
+                    <h2>Free QA Sparring Sessions</h2>
+                </div>
+
+                <p style="color:var(--text-muted);margin-bottom:2rem;line-height:1.8;">
+                    I offer free 20-minute sessions for QA professionals to discuss any topics related to testing, automation, or anything else revolving around the QA world.
+                </p>
+
+                <div class="grid-2" style="margin-bottom:2.5rem;">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Automation Best Practices</h3>
+                        <p>Modern tools, patterns, and frameworks. Playwright, RestAssured, Appium &mdash; let us talk about what works in the real world.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <h3>Project Challenges</h3>
+                        <p>Brainstorm your specific QA challenges. Fresh eyes can help you see problems and solutions you might have missed.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Career Guidance</h3>
+                        <p>Advice on growing as a QA professional &mdash; from engineer to lead, and from startup to enterprise environments.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-map"></i></div>
+                        <h3>Test Strategy</h3>
+                        <p>Improving your test strategies and evaluating the right tool choices for your stack and organisation.</p>
+                    </div>
+                </div>
+
+                <div class="section-header" style="text-align:left;margin-bottom:1rem;">
+                    <h2 style="font-size:1.25rem;">How to make sessions productive</h2>
+                </div>
+
+                <div class="highlight">
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:.4rem 0;color:var(--text);font-size:.9rem;">&#9989; Kindly book only one slot so others can also get a chance.</li>
+                        <li style="padding:.4rem 0;color:var(--text);font-size:.9rem;">&#9989; Please show up &mdash; your time and mine are both valuable.</li>
+                        <li style="padding:.4rem 0;color:var(--text);font-size:.9rem;">&#9989; If you cannot make it, cancel in advance or let me know to free the slot.</li>
+                        <li style="padding:.4rem 0;color:var(--text);font-size:.9rem;">&#9989; For business opportunities, use the <a href="contact.html">business calendar</a> instead.</li>
+                    </ul>
+                </div>
+
+                <div class="note" style="margin-top:1.5rem;">
+                    <i class="fas fa-ban"></i> <strong>Temporarily unavailable:</strong> Free sparring sessions are currently paused as I have started a new engagement. Check back soon or <a href="contact.html" style="color:#92400e;font-weight:600;">reach out directly</a>.
+                </div>
+
+                <!-- Google Calendar Appointment Scheduling begin -->
+                <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                <script>
+                    (function () {
+                        var target = document.currentScript;
+                        window.addEventListener('load', function () {
+                            calendar.schedulingButton.load({
+                                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Iw8FGV5lcAIBKpGynvnoqMs8YT75BnQasy3U5qZxhEBCd1mJSzYFpLORYwIZyaL8JMBRmvgNV?gv=true',
+                                color: '#039BE5',
+                                label: 'Book an appointment',
+                                target,
+                            });
                         });
-                    });
-                })();
-            </script>
-            <!-- end Google Calendar Appointment Scheduling -->
-            
-        </section>    
+                    })();
+                </script>
+                <!-- end Google Calendar Appointment Scheduling -->
+
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+    </script>
     <script type="module" src="js/main.js"></script>
 </body>
-
 </html>

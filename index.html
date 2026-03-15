@@ -1,123 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester<textarea name="" id=""></textarea>ester</title>
+    <title>Power Tester — Test Automation Expert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester</h1>
-        <nav>
-            <a href="index.html">Home</a>  
-            <a href="youtube.html">YouTube</a>
-            <a href="github.html">GitHub</a>
-            <a href="community.html">4TestCommunity</a>
-            <a href="contact.html">Contact</a>  
-            <a href="talks.html">Talks</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="books.html">Books</a>
-            <a href="articles.html">Articles</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i> Freelance ZZP &middot; Test Automation Expert
+            </div>
+            <h1>Hi, I&rsquo;m Pramod Yadav<br><span>The Power Tester</span></h1>
+            <p>With 20+ years of experience helping startups and enterprises set up <strong>Continuous Testing</strong>, with a deep focus on <strong>automation, Continuous Integration and Continuous Delivery</strong>.</p>
+            <div class="hero-actions">
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book a Consultation
+                </a>
+                <a href="#services" class="btn btn-outline">
+                    <i class="fas fa-briefcase"></i> View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Enterprise Clients</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">57+</span>
+                <span class="stat-label">Free Tutorials</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Open Source</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="companies-ticker-wrap" aria-label="Companies I have worked with">
+        <div class="companies-label">Trusted by</div>
+        <div class="ticker-track-wrap">
+            <div class="ticker-track">
+                <span class="company-pill"><i class="fas fa-building"></i> ING</span>
+                <span class="company-pill"><i class="fas fa-building"></i> ABN AMRO</span>
+                <span class="company-pill"><i class="fas fa-building"></i> Rabobank</span>
+                <span class="company-pill"><i class="fas fa-building"></i> European Patent Office</span>
+                <span class="company-pill"><i class="fas fa-building"></i> Mercell</span>
+                <span class="company-pill"><i class="fas fa-building"></i> Atradius</span>
+                <span class="company-pill"><i class="fas fa-rocket"></i> Felyx</span>
+                <span class="company-pill"><i class="fas fa-rocket"></i> ClipBoardHealth</span>
+                <!-- duplicate for seamless loop -->
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> ING</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> ABN AMRO</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> Rabobank</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> European Patent Office</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> Mercell</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-building"></i> Atradius</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-rocket"></i> Felyx</span>
+                <span class="company-pill" aria-hidden="true"><i class="fas fa-rocket"></i> ClipBoardHealth</span>
+            </div>
+        </div>
+    </div>
+
     <main data-testid="main">
-        <section>
-            <!-- Google Calendar Appointment Scheduling begin -->
-            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-            <script>
-                (function () {
-                    var target = document.currentScript;
-                    window.addEventListener('load', function () {
-                        calendar.schedulingButton.load({
-                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1eV8k1CVftMsI8e5op5D1_7-wsWRzKDUnJV8LqyEb6qemDPhqzrIsDMV4R6HKWFUuxmkL3rQVP?gv=true',
-                            color: '#039BE5',
-                            label: 'Book a business appointment',
-                            target,
-                        });
-                    });
-                })();
-            </script>
-            <!-- end Google Calendar Appointment Scheduling -->
-            <p>Schedule a consultation to discuss your QA challenges and explore tailored solutions for your business needs.
-            </p>
-            <h2>Who am I</h2>
-            <p>
-                Hi there 👋, my name is Pramod Yadav (a.k.a. Power Tester). I am a freelance Test Automation Expert (ZZP) and <i>Power Tester</i> is my one man software testing company. 
-            </p>
-            <p>
-                I have a little over 20 years of experience in testing and building
-                end to end test automation solutions for both enterprise and startups customers. Some of my well know enterprise customers include ING, ABN AMRO, Rabobank,
-                European Patent Office, Mercell and Atradius. I have also worked with fast paced startups such as Felyx and ClipBoardHealth. 
-            </p>
-            <p>
-                I enjoy working with both startups and enterprises as they both come with their own set of challenges and strengths.
-            </p> 
 
-            <h2>My Services</h2>
-
-            <div class="highlight">
-                <h3>Fixed Duration contract</h3>
-                <p>
-                    You can either hire me as a full time consultant at a hourly rate for a fixed duration for your project (typically 6
-                    months to 1 year). In this case, I can work 36 to 40 hours dedicatedly for your project.
-                    The hourly rate can be discussed and decided based on the expected role and responsibilities in a project.
-                </p>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">About Me</span>
+                    <h2>Who am I?</h2>
+                    <p>A passionate Test Automation Expert running a one-man software testing company.</p>
+                </div>
+                <div class="about-text" style="max-width:800px;margin:0 auto;">
+                    <p>Hi there &#128075;, my name is Pramod Yadav (a.k.a. <strong>Power Tester</strong>). I am a freelance Test Automation Expert (ZZP) and <strong>Power Tester</strong> is my one-man software testing company.</p>
+                    <p>I have a little over 20 years of experience in testing and building end-to-end test automation solutions for both enterprise and startup customers. Some well-known enterprise customers include <strong>ING, ABN AMRO, Rabobank, European Patent Office, Mercell</strong> and <strong>Atradius</strong>. Fast-paced startup clients include <strong>Felyx</strong> and <strong>ClipBoardHealth</strong>.</p>
+                    <p>I enjoy working with both startups and enterprises as they come with their own unique challenges and strengths.</p>
+                    <p>I also offer <a href="community.html">free 20-minute sparring sessions</a> for the QA community &mdash; covering automation, career growth, and test strategies.</p>
+                </div>
             </div>
-            
-            <div class="highlight">
-                <h3>Fixed Price contract</h3>
-                <p>
-                    Or you can hire me to provide one of the below short term, services for your project. Again, the fixed price can be
-                    discussed based on the service and scope of services provided.
-                </p>
-                <ol>
-                    <li>
-                        <h3>Test Trainings.</h3>
-                        <p>For a crash course and workshops on test automation trainings for your QE Engineers on below areas.</p>
+        </section>
+
+        <section class="section section-alt" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">What I Offer</span>
+                    <h2>My Services</h2>
+                    <p>Flexible engagement models tailored to your project &mdash; from full-time consulting to focused deliverables.</p>
+                </div>
+                <div class="grid-2" style="margin-bottom:2.5rem;">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Fixed Duration Contract</h3>
+                        <p>Hire me as a full-time consultant at an hourly rate for a fixed duration (typically 6 months to 1 year), dedicating 36&ndash;40 hours per week. Rate discussed based on role and responsibilities.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+                        <h3>Fixed Price Contract</h3>
+                        <p>Short-term, scoped services with a fixed price &mdash; ideal for training QA engineers, auditing existing frameworks, or setting up a new test automation stack.</p>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="service-card">
+                        <div class="service-num">1</div>
+                        <h3>Test Trainings</h3>
+                        <p>Crash courses and workshops for QA engineers on advanced automation topics.</p>
                         <ul>
-                            <li> Advanced techniques to integrate tests with CICD. </li>
-                            <li> Advanced techniques to integrate tests with Monitoring Systems. </li>
-                            <li> How to set up readable, scaleable and maintainable test frameworks.</li>
+                            <li>Advanced CICD integration techniques</li>
+                            <li>Test monitoring system integration</li>
+                            <li>Scaleable, maintainable frameworks</li>
                         </ul>
-                    </li>
-                    <li>
-                        <h3>Test Auditing.</h3>
-                        <p>To audit your existing test frameworks and test infrastructure to help you understand the state of QA in your
-                            project and provide an actionable list of findings.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Test Automation setup.</h3>
-                        <p>
-                            A MVP Test Automation setup for (Web, Mobile or API) automation using modern tools and techniques.  
-                            (Playwright, Selenium, Appium, RestAssured, Espresso, XCUITest, PACTFlow Contract testing). 
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Test Pipelines setup.</h3>
-                        <p>Test Pipeline Setup using CICD tooling of your choice (GitHub actions, Azure Devops, Jenkins). </p>
-                    </li>
-                    <li>
-                        <h3>Test Monitoring setup.</h3>
-                        <p>To help you derive meaningful metrices from your test runs (ElasticSearch, Kibana, DataDog, Test Observability)</p>
-                    </li>
-                </ol>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">2</div>
+                        <h3>Test Auditing</h3>
+                        <p>Audit your existing test frameworks and infrastructure. Understand the state of QA in your project and receive a clear, actionable findings report.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">3</div>
+                        <h3>Test Automation Setup</h3>
+                        <p>MVP test automation for Web, Mobile, or API using modern tools: Playwright, Selenium, Appium, RestAssured, Espresso, XCUITest, PACTFlow.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">4</div>
+                        <h3>Test Pipeline Setup</h3>
+                        <p>End-to-end test pipeline setup using your CI/CD tooling of choice: GitHub Actions, Azure DevOps, or Jenkins.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">5</div>
+                        <h3>Test Monitoring Setup</h3>
+                        <p>Derive meaningful metrics from your test runs using ElasticSearch, Kibana, DataDog, or BrowserStack Test Observability.</p>
+                    </div>
+                </div>
             </div>
-            <!-- Google Calendar Appointment Scheduling begin -->
-            <iframe
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1eV8k1CVftMsI8e5op5D1_7-wsWRzKDUnJV8LqyEb6qemDPhqzrIsDMV4R6HKWFUuxmkL3rQVP?gv=true"
-                style="border: 0" width="100%" height="600" title="Google Calendar Appointment Scheduling"></iframe>
-            <!-- end Google Calendar Appointment Scheduling -->
-        </section>    
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Let&rsquo;s Talk</span>
+                    <h2>Book a Business Appointment</h2>
+                    <p>Schedule a consultation to discuss your QA challenges and explore tailored solutions for your business.</p>
+                </div>
+                <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                <script>
+                    (function () {
+                        var target = document.currentScript;
+                        window.addEventListener('load', function () {
+                            calendar.schedulingButton.load({
+                                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1eV8k1CVftMsI8e5op5D1_7-wsWRzKDUnJV8LqyEb6qemDPhqzrIsDMV4R6HKWFUuxmkL3rQVP?gv=true',
+                                color: '#039BE5',
+                                label: 'Book a business appointment',
+                                target,
+                            });
+                        });
+                    })();
+                </script>
+                <div class="booking-container" style="margin-top:1.5rem;">
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1eV8k1CVftMsI8e5op5D1_7-wsWRzKDUnJV8LqyEb6qemDPhqzrIsDMV4R6HKWFUuxmkL3rQVP?gv=true"
+                        style="border:0" width="100%" height="600" title="Google Calendar Appointment Scheduling">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+    </script>
     <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
