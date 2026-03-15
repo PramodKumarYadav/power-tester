@@ -1,119 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester<textarea name="" id=""></textarea>ester</title>
+    <title>About — Power Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="blogs.html">Blog</a>
-            <a href="talks.html">Talks</a>
-            <a href="videos.html">YouTube</a>
-            <a href="references.html">References</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main data-testid="main">
-        <section>
-            <h2>Who am I</h2>
-            <p>
-                Hi there 👋, my name is Pramod Yadav and I am a freelance Test Automation Expert (ZZP).
-            </p>
-            
-            <p>
-                <i>Power Tester</i> is my one man software testing company. I have a little over 20 years of experience in building end to end test automation solutions for both enterprise and startups customers. Some of my well know startup customers were Mercell, Felyx and ClipBoardHealth. Some of the enterprise customers include ING, ABN AMRO, Rabobank, European Patent Office and Atradius. 
-            </p>
 
-            <h2>Skills and experience</h2>
-            <h3>Test Automation</h3>
-            <p>
-                I love to work with latest tech and tools and have experience automating both frontend (monolith, micro-frontend web and mobile), backend (microservices Rest and Soap) and databases (both SQL and noSQL databases).
-            </p>
-            <h3>Test integration with CICD</h3>
-            <p> 
-                I also have solid experience working with DevOps tools such as Azure Devops, GitHub actions and Jenkins and have used them to integrate tests closely in CICD pipelines. 
-            </p>
-            <h3>Test Monitoring</h3>
-            <p>  
-                For monitoring test results, I have experience using tools like ElasticSearch, Kibana, DataDog and BrowserStack Test Monitoring.
-            </p>
-            <h3>Test Tools</h3>
-            <p>  
-                After experimenting with a ton of tools for automation (frontend and backend), my tool of choice are now Playwright (with TypeScrpit) for web automation and RestAssured (with Java) for API automation. I have extensive experience working with Selenium (Java) and Appium (Java) as well. For API exploratory testing I have used both Postman and SoapUI extensively. 
-                
-            </p>
-            <p>
-                <span style="color: rgb(8, 0, 255); font-weight: bold;">Note: </span>Although for Mobile automation, I would prefer to explore other tools like Espresso and XCUITest, which work better with source code and are more robust than Appium.
-            </p>
+    <div class="page-hero">
+        <h1>About Pramod Yadav</h1>
+        <p>Freelance Test Automation Expert (ZZP) with 20+ years of experience.</p>
+    </div>
 
-            <h2>Leadership style</h2>
+    <main>
+        <section class="section">
+            <div class="container" style="max-width:860px;">
 
-            <p>
-                Apart from being a very hands on guy, I have solid experience leading, mentoring and scaling small and big test
-                automation projects and teams, creating test strategies, and putting them into action.
+                <div class="about-text">
+                    <p>Hi there &#128075;, my name is Pramod Yadav and I am a freelance Test Automation Expert (ZZP). <strong>Power Tester</strong> is my one-man software testing company.</p>
+                    <p>I have a little over 20 years of experience in building end-to-end test automation solutions for both enterprise and startup customers. Some of my well-known enterprise customers include <strong>ING, ABN AMRO, Rabobank, European Patent Office</strong> and <strong>Atradius</strong>. Startup customers include <strong>Mercell, Felyx</strong> and <strong>ClipBoardHealth</strong>.</p>
+                </div>
 
-            </p>
-            <p>
-                My unique experience in both technology and management, allows me to operate at highest levels, both as a leader and as
-                an individual contributor. 
-            </p>
-            <p>  
-                My team see me as a natural leader, mentor, continuous learner and a team player that they
-                love to work with.
-            </p>
-            <h2>Motto: Learn, share, have fun!</h2>
-            <p>
-                I love to learn new tools and technologies and share what I have learned with others via my 
-                <a href="https://www.youtube.com/@powertester5596" target="_blank" title="PowerTester YouTube Channel">YouTube channel</a>
-                 and open source  
-                <a href="https://github.com/PramodKumarYadav" target="_blank" title="GitHub projects">GitHub projects</a>
-                 such as <a href="https://github.com/PramodKumarYadav/restpro" target="_blank">restpro</a>, <a href="https://github.com/PramodKumarYadav/zero" target="_blank">zero</a>, 
-                <a href="https://github.com/PramodKumarYadav/slurp" target="_blank">slurp</a> and <a href="https://github.com/PramodKumarYadav/happium" target="_blank">happium</a> on API, Web and Mobile
-                automation respectively.
-            </p>
-            <p>
-                I also created and published a few useful GitHub actions on GitHub Marketplace that QA community can use to accelarate testing. 
-                For reference:
-                <ol>
-                    <li>This <a href="https://github.com/marketplace/actions/playwright-load-balancer-based-on-changed-files"
-                        target="_blank">dynamic sharder</a>
-                    github action would do dynamic scaling of github runners based on the changed test files in a pull request.</li>
-                    <li>
-                        This <a href="https://github.com/marketplace/actions/playwright-load-balancer-based-on-tests-to-run"
-                        target="_blank">dynamic sharder</a>
-                    will do dynamic scaling of github runners based on tests to run.
-                </li>
-                    <li>
-                        This <a href="https://github.com/marketplace/actions/get-browserstack-quality-gate-result"
-                            target="_blank">dynamic sharder</a>
-                         github action would provide the quality gate result of BrowserStack Quality Gate API - a powerful API that help deal with flaky and failing tests better.
-                    </li>
-                </ol>
-            </p>
-            <p>
-                At times, I also create hobby projects just for fun.     
-            </p>
-            <p>    
-                For example, I once thought of finding out how frequently I call
-                my friends and family. I parsed my monthly PDF phone statements using PowerShell and integrated It with Google Contacts
-                to create a list of names-with-frequency report. 
-                
-                If you want to give it a try, checkout this repository named 
-                <a href="https://github.com/PramodKumarYadav/Circle" target="_blank" title="GitHub projects">circle</a>.
-            </p>
-        </section>    
+                <div style="margin:2.5rem 0;">
+                    <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+                        <span class="section-label">Expertise</span>
+                        <h2>Skills &amp; Experience</h2>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-robot"></i></div>
+                            <h3>Test Automation</h3>
+                            <p>Frontend (monolith, micro-frontend, web and mobile), backend (microservices, REST and SOAP) and databases (SQL and NoSQL). My tools of choice: <strong>Playwright</strong> (TypeScript) for web, <strong>RestAssured</strong> (Java) for API.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+                            <h3>CI/CD Integration</h3>
+                            <p>Solid experience with <strong>Azure DevOps, GitHub Actions</strong> and <strong>Jenkins</strong>, integrating tests closely into CI/CD pipelines for fast, reliable feedback loops.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                            <h3>Test Monitoring</h3>
+                            <p>Experience with <strong>ElasticSearch, Kibana, DataDog</strong> and <strong>BrowserStack Test Monitoring</strong> to derive meaningful metrics from test runs.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-people-group"></i></div>
+                            <h3>Leadership</h3>
+                            <p>Hands-on experience leading, mentoring, and scaling test automation teams. Creating test strategies and putting them into action at both startup and enterprise scale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h3>Motto: Learn, Share, Have Fun!</h3>
+                    <p>I love to learn new tools and technologies and share what I have learned via my
+                        <a href="https://www.youtube.com/@powertester5596" target="_blank">YouTube channel</a>
+                        and open-source <a href="https://github.com/PramodKumarYadav" target="_blank">GitHub projects</a>
+                        such as <a href="https://github.com/PramodKumarYadav/restpro" target="_blank">restpro</a>,
+                        <a href="https://github.com/PramodKumarYadav/zero" target="_blank">zero</a>,
+                        <a href="https://github.com/PramodKumarYadav/slurp" target="_blank">slurp</a> and
+                        <a href="https://github.com/PramodKumarYadav/happium" target="_blank">happium</a>.
+                    </p>
+                </div>
+
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
-    <script type="module" src="js/main.js"></script>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+    </script>
 </body>
-
 </html>

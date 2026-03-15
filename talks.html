@@ -1,93 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester</title>
+    <title>Talks — Power Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester (tech talks)</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="youtube.html">YouTube</a>
-            <a href="github.html">GitHub</a>
-            <a href="community.html">4TestCommunity</a>
-            <a href="contact.html">Contact</a>
-            <a href="talks.html">Talks</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="books.html">Books</a>
-            <a href="articles.html">Articles</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html" class="active">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <div class="page-hero">
+        <h1><i class="fas fa-microphone-alt" style="color:var(--primary);margin-right:.5rem;"></i> Tech Talks</h1>
+        <p>Conference talks, summits, and community presentations on QA, automation, and software quality.</p>
+    </div>
+
     <main>
-        <section>
-            <h3>Tech Talks 2024 </h3>
-            <h4>qa-leadership-summit-winter-2024</h4>
-            <input type="text" id="search-bar" placeholder="Search tech talks..." onkeyup="filterBlogs()">
-            <ul id="tech-talk-list">
-                <li class="blog-item"><a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024">qa-leadership-summit-winter-2024</a></li>
-            </ul>
-            <div class="preview-container">
-                <!-- Wrap the image in an <a> tag to make it clickable -->
-                <a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024" target="_blank">
-                    <img src="https://browserstack.wpenginepowered.com/wp-content/uploads/2024/10/Logo-QA.png"
-                        alt="QA Leadership Summit Winter 2024" class="preview">
-                </a>
-            </div>
-            <div id="pagination">
-                <button onclick="changePage(-1)">Previous</button>
-                <span id="page-info"></span>
-                <button onclick="changePage(1)">Next</button>
+        <section class="section">
+            <div class="container">
+
+                <div class="search-container">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" id="search-bar" placeholder="Search talks..." onkeyup="filterTalks()">
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:1.5rem;" id="tech-talk-list">
+                    <div class="blog-item project-card">
+                        <span class="project-badge"><i class="fas fa-calendar"></i> 2024</span>
+                        <h2>QA Leadership Summit &mdash; Winter 2024</h2>
+                        <p>Invited speaker at the QA Leadership Summit Winter 2024 by BrowserStack, covering modern approaches to test observability and quality gates in CI/CD pipelines.</p>
+                        <div style="margin-top:1rem;">
+                            <a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Event on BrowserStack
+                            </a>
+                        </div>
+                        <div style="margin-top:1.25rem;">
+                            <a href="https://www.browserstack.com/events/qa-leadership-summit-winter-2024" target="_blank">
+                                <img src="https://browserstack.wpenginepowered.com/wp-content/uploads/2024/10/Logo-QA.png"
+                                    alt="QA Leadership Summit Winter 2024"
+                                    style="border-radius:var(--radius);max-height:80px;width:auto;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <button onclick="changePage(-1)">&#8592; Previous</button>
+                    <span id="page-info"></span>
+                    <button onclick="changePage(1)">Next &#8594;</button>
+                </div>
             </div>
         </section>
-       
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
     <script>
-        function filterBlogs() {
-            const searchInput = document.getElementById('search-bar').value.toLowerCase();
-            const blogs = document.querySelectorAll('#blog-list li');
-
-            blogs.forEach((blog) => {
-                const text = blog.textContent.toLowerCase();
-                blog.style.display = text.includes(searchInput) ? '' : 'none';
-            });
-        }
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
     </script>
     <script>
-        const blogsPerPage = 2;
-        let currentPage = 1;
-
-        function paginateBlogs() {
-            const blogItems = document.querySelectorAll('.blog-item');
-            const totalPages = Math.ceil(blogItems.length / blogsPerPage);
-
-            blogItems.forEach((item, index) => {
-                item.style.display =
-                    index >= (currentPage - 1) * blogsPerPage && index < currentPage * blogsPerPage
-                        ? ''
-                        : 'none';
+        function filterTalks() {
+            const q = document.getElementById('search-bar').value.toLowerCase();
+            document.querySelectorAll('.blog-item').forEach(el => {
+                el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
             });
-
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
-            document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
         }
-
-        function changePage(direction) {
-            currentPage += direction;
-            paginateBlogs();
+        const itemsPerPage = 5;
+        let currentPage = 1;
+        function paginateBlogs() {
+            const items = document.querySelectorAll('.blog-item');
+            const total = Math.ceil(items.length / itemsPerPage);
+            items.forEach((item, i) => {
+                item.style.display = (i >= (currentPage-1)*itemsPerPage && i < currentPage*itemsPerPage) ? '' : 'none';
+            });
+            document.getElementById('page-info').textContent = 'Page ' + currentPage + ' of ' + total;
+            document.querySelector('#pagination button:first-child').disabled = currentPage === 1;
+            document.querySelector('#pagination button:last-child').disabled = currentPage === total;
         }
-
+        function changePage(dir) { currentPage += dir; paginateBlogs(); }
         paginateBlogs();
     </script>
-   
 </body>
-
 </html>

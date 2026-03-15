@@ -1,156 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester</title>
+    <title>Books — Power Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester (books)</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="youtube.html">YouTube</a>
-            <a href="github.html">GitHub</a>
-            <a href="community.html">4TestCommunity</a>
-            <a href="contact.html">Contact</a>
-            <a href="talks.html">Talks</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="books.html">Books</a>
-            <a href="articles.html">Articles</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html" class="active">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <div class="page-hero">
+        <h1><i class="fas fa-book-open" style="color:var(--primary);margin-right:.5rem;"></i> Recommended Books</h1>
+        <p>Books that shaped my skills in software engineering, testing, and technology leadership.</p>
+    </div>
+
     <main>
-        <section>
-            <input type="text" id="search-bar" placeholder="Search references..." onkeyup="filterReferences()">
-            <div id="books-section">
-                <h3>Read and recommended</h3>
-                <ul id="read-recommended-list">
-                    <li class="reference-item">
-                        <img src="images/clean-code.jpg" alt="Clean Code" class="book-icon">
-                        <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/docker.jpg" alt="Learn Docker in a Month of Lunches" class="book-icon">
-                        <a href="https://www.manning.com/books/learn-docker-in-a-month-of-lunches" target="_blank">Learn Docker in a month of lunches</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/git.jpg" alt="git" class="book-icon">
-                        <a href="https://git-scm.com/docs/user-manual" target="_blank">Official Git User Manual</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/command-line.jpg" alt="command-line" class="book-icon">
-                        <a href="https://linuxcommand.org/tlcl.php" target="_blank">The Linux Command Line</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/head-first-java.jpg" alt="head-first-java" class="book-icon">
-                        <a href="https://www.amazon.com/Head-First-Java-Brain-Friendly-Guide/dp/1491910771" target="_blank">Head first Java</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/head-first-design-patterns.jpg" alt="head-first-design-patterns" class="book-icon">
-                        <a href="https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X" target="_blank">Head first Design Patterns</a>
-                    </li>
-                    <li class="reference-item">
-                        <img src="images/functional-programming-in-java.jpg" alt="functional-programming-in-java" class="book-icon">
-                        <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467" target="_blank">Functional Programming in Java</a>
-                    </li>
-                    <li class="reference-item">More to be updated...</li>
-                </ul>
-                <h3>Next in line</h3>
-                <ul id="next-in-line-list">
-                    <img src="images/accelerate.jpg" alt="accelarate" class="book-icon">
-                    <li class="reference-item"><a href="https://www.amazon.com/Accelerate-Building-Performing-Technology-Organizations/dp/B07BMBYHXL" target="_blank">Accelerate</a></li>
-                </ul>
-            </div>  
-            <div id="pagination">
-                <button onclick="changePage(-1)">Previous</button>
-                <span id="page-info"></span>
-                <button onclick="changePage(1)">Next</button>
+        <section class="section">
+            <div class="container">
+                <div class="search-container">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" id="search-bar" placeholder="Search books..." onkeyup="filterReferences()">
+                </div>
+
+                <div id="books-section">
+                    <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+                        <span class="section-label">Already Read</span>
+                        <h2>Read &amp; Recommended</h2>
+                    </div>
+                    <ul class="reference-grid" id="read-recommended-list">
+                        <li class="reference-item">
+                            <img src="images/clean-code.jpg" alt="Clean Code">
+                            <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/docker.jpg" alt="Learn Docker in a Month of Lunches">
+                            <a href="https://www.manning.com/books/learn-docker-in-a-month-of-lunches" target="_blank">Learn Docker in a Month of Lunches</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/git.jpg" alt="Official Git User Manual">
+                            <a href="https://git-scm.com/docs/user-manual" target="_blank">Official Git User Manual</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/command-line.jpg" alt="The Linux Command Line">
+                            <a href="https://linuxcommand.org/tlcl.php" target="_blank">The Linux Command Line</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/head-first-java.jpg" alt="Head First Java">
+                            <a href="https://www.amazon.com/Head-First-Java-Brain-Friendly-Guide/dp/1491910771" target="_blank">Head First Java</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/head-first-design-patterns.jpg" alt="Head First Design Patterns">
+                            <a href="https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X" target="_blank">Head First Design Patterns</a>
+                        </li>
+                        <li class="reference-item">
+                            <img src="images/functional-programming-in-java.jpg" alt="Functional Programming in Java">
+                            <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467" target="_blank">Functional Programming in Java</a>
+                        </li>
+                    </ul>
+
+                    <div class="section-header" style="text-align:left;margin:3rem 0 1.5rem;">
+                        <span class="section-label">On the List</span>
+                        <h2>Next in Line</h2>
+                    </div>
+                    <ul class="reference-grid" id="next-in-line-list">
+                        <li class="reference-item">
+                            <img src="images/accelerate.jpg" alt="Accelerate">
+                            <a href="https://www.amazon.com/Accelerate-Building-Performing-Technology-Organizations/dp/B07BMBYHXL" target="_blank">Accelerate</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <button onclick="changePage(-1)">&#8592; Previous</button>
+                    <span id="page-info"></span>
+                    <button onclick="changePage(1)">Next &#8594;</button>
+                </div>
             </div>
         </section>
-        <script>
-            // Function to check and hide the books section dynamically
-            function checkBooksSection() {
-                const booksSection = document.getElementById('books-section');
-                const readRecommendedList = document.getElementById('read-recommended-list');
-                const nextInLineList = document.getElementById('next-in-line-list');      
-
-                // Check if both lists are empty
-                const isReadRecommendedEmpty = Array.from(readRecommendedList.children).every(
-                    (item) => item.style.display === 'none'
-                );
-                const isNextInLineEmpty = Array.from(nextInLineList.children).every(
-                    (item) => item.style.display === 'none'
-                );
-
-                // Hide the books section if both lists are empty for the current page
-                if (isReadRecommendedEmpty && isNextInLineEmpty) {
-                    booksSection.style.display = 'none'; // Hide the block
-                } else {
-                    booksSection.style.display = 'block'; // Show the block
-                }
-            }
-
-            // Call the paginateReferences function on page load
-            document.addEventListener('DOMContentLoaded', paginateReferences);
-        </script>
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
     <script>
-        function filterReferences() {
-            const searchInput = document.getElementById('search-bar').value.toLowerCase();
-
-            // Select all list items in the relevant sections
-            const references = document.querySelectorAll('#read-recommended-list li, #next-in-line-list li');
-
-            // Filter references based on the search input
-            references.forEach((reference) => {
-                const text = reference.textContent.toLowerCase();
-                reference.style.display = text.includes(searchInput) ? '' : 'none';
-            });
-
-            // Recheck visibility of the books section after filtering
-            checkBooksSection();
-        }
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
     </script>
     <script>
-        const referencesPerPage = 10;
+        const refsPerPage = 12;
         let currentPage = 1;
 
-        // Modify paginateReferences to check the books section
         function paginateReferences() {
-            const referenceItems = document.querySelectorAll('.reference-item');
-            const totalPages = Math.ceil(referenceItems.length / referencesPerPage);
-
-            referenceItems.forEach((item, index) => {
-                item.style.display =
-                    index >= (currentPage - 1) * referencesPerPage && index < currentPage * referencesPerPage
-                        ? ''
-                        : 'none';
+            const items = document.querySelectorAll('.reference-item');
+            const total = Math.ceil(items.length / refsPerPage) || 1;
+            items.forEach((item, i) => {
+                item.style.display = (i >= (currentPage-1)*refsPerPage && i < currentPage*refsPerPage) ? '' : 'none';
             });
-
-            // Update pagination info
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
-            document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
-
-            // Check the books section for the current page
-            checkBooksSection();
+            document.getElementById('page-info').textContent = 'Page ' + currentPage + ' of ' + total;
+            document.querySelector('#pagination button:first-child').disabled = currentPage === 1;
+            document.querySelector('#pagination button:last-child').disabled = currentPage === total;
         }
 
-        function changePage(direction) {
-            currentPage += direction;
-            paginateReferences();
+        function changePage(dir) { currentPage += dir; paginateReferences(); }
+
+        function filterReferences() {
+            const q = document.getElementById('search-bar').value.toLowerCase();
+            document.querySelectorAll('.reference-item').forEach(li => {
+                li.style.display = li.textContent.toLowerCase().includes(q) ? '' : 'none';
+            });
         }
 
-        paginateReferences();
+        document.addEventListener('DOMContentLoaded', paginateReferences);
     </script>
-   
 </body>
-
 </html>

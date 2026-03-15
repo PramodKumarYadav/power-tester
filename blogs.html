@@ -1,112 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Tester</title>
+    <title>Blogs — Power Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header data-testid="main-header">
-        <h1>Power Tester (blogs)</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="youtube.html">YouTube</a>
-            <a href="github.html">GitHub</a>
-            <a href="community.html">4TestCommunity</a>
-            <a href="contact.html">Contact</a>
-            <a href="talks.html">Talks</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="books.html">Books</a>
-            <a href="articles.html">Articles</a>
-        </nav>
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="blogs.html" class="active">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <div class="page-hero">
+        <h1><i class="fas fa-pen-nib" style="color:var(--primary);margin-right:.5rem;"></i> Blog Posts</h1>
+        <p>Deep dives on test automation, CI/CD pipelines, and modern testing strategies.</p>
+    </div>
+
     <main>
-        <section>
-            <input type="text" id="search-bar" placeholder="Search blog posts..." onkeyup="filterBlogs()">
-            <ul id="blog-list">
-                <li class="blog-item">
-                    <a href="blogs/test-location-matters.html">Test Location: The single most imp factor that can make or break your test automation efforts</a>
-                    <iframe title="E2E Tests Location Diagram" style="width:100%;height:483px;"
-                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=e2e-tests-location.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fdesign%2Fe2e-tests-location.drawio">
-                    </iframe>
-                </li>
-                <li class="blog-item">
-                    <a href="blogs/finish-fast-in-2-mins.html">Yes, you can finish ALL your PlayWright tests in 2 to 5 mins. Here is how.</a>
-                    <iframe title="Diagram Viewer" style="width:100%;height:1053px;"
-                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=finish-tests-in-x-mins.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Ffinish-tests-in-x-mins.drawio">
-                    </iframe>
-                </li>
-                <li class="blog-item">
-                    <a href="blogs/test-run-goals.html">Test Run: Goals and Objectives</a>
-                    <iframe title="Test Run Goals and Objectives" style="width:100%;height:873px;"
-                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=test-run-goals-and-objectives.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fgoals%2Ftest-run-goals-and-objectives.drawio">
-                    </iframe>
-                </li>
-                <li class="blog-item">
-                    <a href="blogs/ci-cd-without-feature-toggles.html">Continuous testing in a CICD setup without feature flags</a>
-                    <iframe title="Continuous testing in a CICD setup without feature flags" style="width:100%;height:1783px;" 
-                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ci-cd-without-feature-toggles.drawio&dark=auto#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Fci-cd-without-feature-toggles.drawio">
-                    </iframe>
-                </li>
-                <li class="blog-item">
-                    <a href="blogs/ci-cd-with-feature-toggles.html">CI CD with feature toggles and a focus on test and quality gates</a>
-                    <iframe title="CI CD with feature toggles and a focus on test and quality gates" frameborder="0" style="width:100%;height:1783px;" 
-                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ci-cd-with-feature-toggles.drawio&dark=auto#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPramodKumarYadav%2Ftest-art%2Fmain%2Fcicd%2Fci-cd-with-feature-toggles.drawio">
-                    </iframe>
-                </li>
-            </ul>
-            <div id="pagination">
-                <button onclick="changePage(-1)">Previous</button>
-                <span id="page-info"></span>
-                <button onclick="changePage(1)">Next</button>
+        <section class="section">
+            <div class="container">
+                <div class="search-container">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" id="search-bar" placeholder="Search blog posts..." onkeyup="filterBlogs()">
+                </div>
+
+                <ul id="blog-list" style="list-style:none;display:flex;flex-direction:column;gap:1.5rem;">
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-layer-group"></i> Test Architecture</span>
+                        </div>
+                        <h3><a href="blogs/test-location-matters.html">Test Location: The single most important factor that can make or break your test automation efforts</a></h3>
+                        <p class="blog-excerpt">Where you place your tests in the stack determines everything — speed, reliability, and the ROI of your entire automation investment. A visual deep-dive using architecture diagrams.</p>
+                        <a href="blogs/test-location-matters.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-bolt"></i> Performance</span>
+                        </div>
+                        <h3><a href="blogs/finish-fast-in-2-mins.html">Yes, you can finish ALL your Playwright tests in 2 to 5 mins. Here is how.</a></h3>
+                        <p class="blog-excerpt">Sharding, parallelisation, and smart load balancing strategies to shrink your full Playwright test suite runtime down to just a few minutes — with diagrams.</p>
+                        <a href="blogs/finish-fast-in-2-mins.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-bullseye"></i> Strategy</span>
+                        </div>
+                        <h3><a href="blogs/test-run-goals.html">Test Run: Goals and Objectives</a></h3>
+                        <p class="blog-excerpt">What should a test run actually achieve? This post breaks down the goals and objectives every test run should satisfy, from fast feedback to reliable quality gates.</p>
+                        <a href="blogs/test-run-goals.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-code-branch"></i> CI/CD</span>
+                        </div>
+                        <h3><a href="blogs/ci-cd-without-feature-toggles.html">Continuous testing in a CI/CD setup without feature flags</a></h3>
+                        <p class="blog-excerpt">A detailed look at how to keep your test suite running reliably in a continuous delivery pipeline when you don't have feature toggles to hide incomplete work.</p>
+                        <a href="blogs/ci-cd-without-feature-toggles.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-toggle-on"></i> CI/CD</span>
+                        </div>
+                        <h3><a href="blogs/ci-cd-with-feature-toggles.html">CI/CD with feature toggles and a focus on test quality gates</a></h3>
+                        <p class="blog-excerpt">How feature flags change the testing game in CI/CD — and how to use them alongside quality gates to ship faster without sacrificing confidence in your releases.</p>
+                        <a href="blogs/ci-cd-with-feature-toggles.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                    <li class="blog-item blog-card">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag"><i class="fas fa-sitemap"></i> CI/CD</span>
+                        </div>
+                        <h3><a href="blogs/ci-cd-test-workflow.html">CI/CD Test Workflow: End-to-End Pipeline Design</a></h3>
+                        <p class="blog-excerpt">A comprehensive walkthrough of designing a production-grade CI/CD test workflow — from commit hooks to deployment gates — built for modern engineering teams.</p>
+                        <a href="blogs/ci-cd-test-workflow.html" class="blog-read-more">Read post <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+
+                <div class="pagination" id="pagination">
+                    <button onclick="changePage(-1)">&#8592; Previous</button>
+                    <span id="page-info"></span>
+                    <button onclick="changePage(1)">Next &#8594;</button>
+                </div>
             </div>
-        </section>     
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Power Tester</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
     </footer>
     <script>
-        function filterBlogs() {
-            const searchInput = document.getElementById('search-bar').value.toLowerCase();
-            const blogs = document.querySelectorAll('#blog-list li');
-
-            blogs.forEach((blog) => {
-                const text = blog.textContent.toLowerCase();
-                blog.style.display = text.includes(searchInput) ? '' : 'none';
-            });
-        }
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
     </script>
     <script>
-        const blogsPerPage = 5;
-        let currentPage = 1;
-
-        function paginateBlogs() {
-            const blogItems = document.querySelectorAll('.blog-item');
-            const totalPages = Math.ceil(blogItems.length / blogsPerPage);
-
-            blogItems.forEach((item, index) => {
-                item.style.display =
-                    index >= (currentPage - 1) * blogsPerPage && index < currentPage * blogsPerPage
-                        ? ''
-                        : 'none';
+        function filterBlogs() {
+            const q = document.getElementById('search-bar').value.toLowerCase();
+            document.querySelectorAll('#blog-list li').forEach(li => {
+                li.style.display = li.textContent.toLowerCase().includes(q) ? '' : 'none';
             });
-
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.querySelector('#pagination button:nth-child(1)').disabled = currentPage === 1;
-            document.querySelector('#pagination button:nth-child(3)').disabled = currentPage === totalPages;
         }
+        // Save page before navigating to a post so "Back to Blogs" restores position
+        document.querySelectorAll('.blog-item a').forEach(link => {
+            link.addEventListener('click', () => {
+                sessionStorage.setItem('blogsPage', currentPage);
+            });
+        });
 
-        function changePage(direction) {
-            currentPage += direction;
+        const blogsPerPage = 2;
+        let currentPage = parseInt(sessionStorage.getItem('blogsPage')) || 1;
+        sessionStorage.removeItem('blogsPage');
+        function paginateBlogs() {
+            const items = document.querySelectorAll('.blog-item');
+            const total = Math.ceil(items.length / blogsPerPage);
+            items.forEach((item, i) => {
+                item.style.display = (i >= (currentPage - 1) * blogsPerPage && i < currentPage * blogsPerPage) ? '' : 'none';
+            });
+            document.getElementById('page-info').textContent = 'Page ' + currentPage + ' of ' + total;
+            document.querySelector('#pagination button:first-child').disabled = currentPage === 1;
+            document.querySelector('#pagination button:last-child').disabled = currentPage === total;
+        }
+        function changePage(dir) {
+            currentPage += dir;
             paginateBlogs();
+            document.getElementById('blog-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-
         paginateBlogs();
     </script>
-   
 </body>
-
 </html>
