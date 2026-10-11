@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons — Power Tester</title>
+    <meta name="description" content="Lessons I learned over the years and wish someone had shared with me when I was starting out. Each one tested on real projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="signals-page">
+    <header class="site-header" data-testid="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                Power<span>Tester</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="github.html">GitHub</a>
+                <a href="community.html">Community</a>
+                <a href="books.html">Books</a>
+                <a href="articles.html">Articles</a>
+                <a href="talks.html">Talks</a>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="signal-dots" aria-label="Sections">
+        <a href="#00" title="Start here"><span></span></a>
+        <a href="#01" title="Test location"><span></span></a>
+        <a href="#02" title="Test language"><span></span></a>
+        <a href="#03" title="Test level"><span></span></a>
+        <a href="#04" title="Test tooling"><span></span></a>
+        <a href="#05" title="Start Monday"><span></span></a>
+    </nav>
+
+    <main class="signals">
+
+        <section class="signal" id="00">
+            <div class="signal-inner">
+                <div class="signal-num">00</div>
+                <p class="signal-kicker">Start here</p>
+                <h1 class="signal-title">What I know now.</h1>
+                <div class="signal-body">
+                    <p>A catalogue of lessons I wish someone had given my 24-year-old self.</p>
+                    <p class="signal-aside">The format is borrowed, with admiration, from <a href="https://37signals.com/37" target="_blank" rel="noopener">37signals</a>.</p>
+                </div>
+                <ol class="signal-index signal-index-top" aria-label="All lessons">
+                    <li><a href="#01"><b>01.</b> Your place or mine?</a></li>
+                    <li><a href="#02"><b>02.</b> Your language or mine?</a></li>
+                    <li><a href="#03"><b>03.</b> Your level or mine?</a></li>
+                    <li><a href="#04"><b>04.</b> Your tooling or mine?</a></li>
+                    <li><a href="#05"><b>05.</b> Start Monday.</a></li>
+                </ol>
+                <a href="#01" class="signal-next" aria-label="Next: Test location"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="01">
+            <div class="signal-inner">
+                <div class="signal-num">01</div>
+                <p class="signal-kicker">Test location. QA asks the developer:</p>
+                <h2 class="signal-title">Your place<br>or mine?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Developers. In the app repo, every single time.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>Solves false positives.</strong> Tests change in the same commit as the code, so a red build means a bug, not an intended change.</li>
+                        <li><strong>Solves late feedback.</strong> You hear about a break on the commit that caused it, not after it reaches the test environment.</li>
+                        <li><strong>Shared responsibilities.</strong> Developers fix broken tests. QAs test the app and write the missing tests.</li>
+                        <li><strong>Gives QAs mental space</strong> to actually test the app and write the missing tests, instead of living in maintenance hell.</li>
+                        <li><strong>Solves capacity constraints.</strong> Maintenance is one of the key challenges as the test count grows. When everyone owns the tests, the burden doesn't fall on a single person.</li>
+                    </ul>
+                    <p>I have written about this at length in <a href="blogs/test-location-matters.html">Test Location Matters</a>. It is the single decision that makes or breaks a test automation effort.</p>
+                    <p><strong>Put the tests where the code is. Everything else follows.</strong></p>
+                                        </div>
+                    </details>
+</div>
+                <a href="#02" class="signal-next" aria-label="Next: Test language"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+        <section class="signal" id="02">
+            <div class="signal-inner">
+                <div class="signal-num">02</div>
+                <p class="signal-kicker">Test language. QA asks the developer:</p>
+                <h2 class="signal-title">Your language<br>or mine?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Developers&rsquo;. The language the app is written in, every single time.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>Solves ownership.</strong> Developers can read, review, and fix a test written in their own language. A test in a language they do not know is a test they will never touch.</li>
+                        <li><strong>Solves the two-toolchain problem.</strong> One build, one linter, one package manager, one CI job. No second ecosystem to keep alive.</li>
+                        <li><strong>Solves duplication.</strong> Tests reuse the app&rsquo;s types, models, fixtures, and clients instead of rebuilding the domain in another language.</li>
+                        <li><strong>Solves scale versus maintenance.</strong> When tests speak the team&rsquo;s language, the whole team maintains them, not only QA.</li>
+                        <li><strong>Gives QAs a stronger skill.</strong> Learning the developers&rsquo; language makes you a better engineer, not just a better tester.</li>
+                        <li><strong>No need to hire an army of QAs</strong> who know a niche, test-only stack. Anyone on the team can contribute a test.</li>
+                    </ul>
+                    <p>This is why I reach for Playwright in TypeScript on a TypeScript frontend, and RestAssured in Java on a Java backend. The tool follows the language. The language follows the app.</p>
+                    <p><strong>Learn their language. Then the tests belong to everyone.</strong></p>
+                                        </div>
+                    </details>
+</div>
+                <a href="#03" class="signal-next" aria-label="Next: Test level"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="03">
+            <div class="signal-inner">
+                <div class="signal-num">03</div>
+                <p class="signal-kicker">Test level. Where should most tests live? QA asks the developer:</p>
+                <h2 class="signal-title">Your level<br>or mine?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Developers&rsquo;. Most tests at unit and integration level. System tests only for what nothing below can see.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>Most functionality belongs at unit level.</strong> Business rules, validations, calculations, edge cases. Every branch of logic, tested in isolation, in milliseconds.</li>
+                        <li><strong>Most integration issues belong at component level.</strong> Wiring, contracts, serialisation, queries, configuration. Test the seams where two parts meet, with the real parts on both sides.</li>
+                        <li><strong>Most system tests are checks that could live lower.</strong> They exist because QA cannot see the tests underneath. Read the unit and component tests first. Then write only what is missing.</li>
+                        <li><strong>System tests cover only what nothing below can.</strong> That the deployed app starts and its pieces are wired together. That one request goes in through the real UI and comes back out with the right data persisted. That login, permissions, and navigation hold across the whole stack.</li>
+                        <li><strong>System journeys, not user journeys.</strong> A system journey cuts vertically through frontend, middleware, and backend inside your application&rsquo;s boundary. A user journey runs horizontally across systems you do not control. Stub what sits outside the boundary and cover it with a contract test.</li>
+                        <li><strong>Leave the user journey to a human.</strong> Automation tells you whether you are building it right. Only a person walking the product tells you whether you are building the right product, and finds the UX issues on the way.</li>
+                        <li><strong>Fast and, above all, reliable.</strong> A system suite that finishes in minutes and passes whenever nothing is broken. A flaky test is worse than no test: it teaches the team to ignore red.</li>
+                    </ul>
+                    <p>The system tests I recommend, each walk one system journey end to end: in through the UI, down to the database, and back. Everything else lives one level down, where it runs in seconds and fails for one reason only.</p>
+                    <p><strong>Push every check as low as it can go. What remains is your system suite: small, vertical, fast, and reliable.</strong></p>
+                        </div>
+                    </details>
+                </div>
+                <a href="#04" class="signal-next" aria-label="Next: Test tooling"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="04">
+            <div class="signal-inner">
+                <div class="signal-num">04</div>
+                <p class="signal-kicker">Test tooling. One cross-platform tool for QA, or the native tool each platform already has? QA asks the developer:</p>
+                <h2 class="signal-title">Your tooling<br>or mine?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Developers&rsquo;. Espresso on Android, XCUITest on iOS. Two native tools over one tool in the middle. Every single time.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>&ldquo;One tool&rdquo; is really three.</strong> Appium puts a server, a driver, and a client library between your test and the app. Every layer is a place to be slow, to be flaky, and to lag behind the next OS release.</li>
+                        <li><strong>Google builds Espresso. Apple builds XCUITest. Dan Cuellar created Appium. And no, it is not the same as Linux or Git.</strong> When the company that builds the platform also builds the test tool, the tool knows the platform from the inside. It ships with the OS, it is updated the day the platform changes, and it is not going away.</li>
+                        <li><strong>Same repo, same language, same build.</strong> The test sits beside the screen it tests, in Kotlin or Swift, and runs with the developers&rsquo; build in CI. Lessons 01, 02, and 03 come for free.</li>
+                        <li><strong>Developers already know them.</strong> Android and iOS developers learn Espresso and XCUITest as part of their craft. Nobody has to learn a WebDriver dialect to help QA.</li>
+                        <li><strong>Fast and reliable.</strong> In-process, no network hop, no session to set up. Hundreds of native UI tests finish in the time a bridge takes to launch.</li>
+                        <li><strong>Yes, you write it twice.</strong> Two small, simple, native suites cost less than one large, slow, shared one. And each platform team owns exactly one of them.</li>
+                    </ul>
+                    <p>Appium&rsquo;s promise of one test for both iOS and Android is tempting. But one shared test means one outside repo, with the sync problems from lesson 01, and an architecture that trades speed and reliability for portability. Over time it becomes more nuisance than help. Espresso and XCUITest are fast and reliable. Appium is neither. The cost lands on the whole team, every day, for years.</p>
+                    <p><strong>Pick the tool the developer would pick. Then you never test alone.</strong></p>
+                        </div>
+                    </details>
+                </div>
+                <a href="#05" class="signal-next" aria-label="Next: Start Monday"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal signal-last" id="05">
+            <div class="signal-inner">
+                <div class="signal-num">05</div>
+                <p class="signal-kicker">What now?</p>
+                <h2 class="signal-title">Start Monday.</h2>
+                <div class="signal-body">
+                    <ol class="signal-actions">
+                        <li><span>Locate</span> Open your test repo. If it is not the application repo, start the move this sprint.</li>
+                        <li><span>Speak</span> If your tests are in a different language than the app, write the next one in the app&rsquo;s language.</li>
+                        <li><span>Level</span> Count your tests per level. If the system layer is the biggest, write the next test one level down.</li>
+                        <li><span>Tool</span> Before adopting a cross-platform test tool, ask the developers which tool they would use. Use that.</li>
+                    </ol>
+                    <p>That is it. Learn, share, have fun. If you want to spar on any of these, I offer <a href="community.html">free 20-minute sessions</a> for the QA community.</p>
+                </div>
+
+                <ol class="signal-index" aria-label="All sections">
+                    <li><a href="#00"><b>00.</b> Start here</a></li>
+                    <li><a href="#01"><b>01.</b> Your place or mine? In the app repo, every single time.</a></li>
+                    <li><a href="#02"><b>02.</b> Your language or mine? The app&rsquo;s language, every single time.</a></li>
+                    <li><a href="#03"><b>03.</b> Your level or mine? Push every check as low as it can go.</a></li>
+                    <li><a href="#04"><b>04.</b> Your tooling or mine? Two native tools over one in the middle.</a></li>
+                    <li><a href="#05"><b>05.</b> Start Monday.</a></li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="signal-hint" aria-hidden="true">Presenting? <kbd>&larr;</kbd> <kbd>&rarr;</kbd> lessons &middot; <kbd>&darr;</kbd> <kbd>&uarr;</kbd> recommendation</div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt logo-icon"></i>
+                        Power<span>Tester</span>
+                    </a>
+                    <p>Freelance Test Automation Expert. Helping startups and enterprises build world-class QA solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="talks.html">Talks</a></li>
+                        <li><a href="lessons.html">Lessons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Tester &middot; Pramod Kumar Yadav</p>
+                <p>Built with &#10084;&#65039; for the QA community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+    </script>
+    <script>
+        // Keyboard navigation for presenting: arrows, space, j/k move between sections.
+        (function () {
+            const sections = Array.from(document.querySelectorAll('.signal'));
+            const dots = Array.from(document.querySelectorAll('.signal-dots a'));
+
+            function currentIndex() {
+                const mid = window.scrollY + window.innerHeight / 2;
+                let idx = 0;
+                sections.forEach((s, i) => { if (s.offsetTop <= mid) idx = i; });
+                return idx;
+            }
+            function go(i) {
+                const target = sections[Math.max(0, Math.min(sections.length - 1, i))];
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#' + target.id);
+            }
+            function toggleReveal(open) {
+                const reveal = sections[currentIndex()].querySelector('details.signal-reveal');
+                if (!reveal || reveal.open === open) return false;
+                reveal.open = open;
+                return true;
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.metaKey || e.ctrlKey || e.altKey) return;
+                if (e.target.tagName === 'SUMMARY' && (e.key === 'Enter' || e.key === ' ')) return;
+                const next = ['ArrowRight', 'PageDown', ' ', 'j', 'Enter'];
+                const prev = ['ArrowLeft', 'PageUp', 'k', 'Backspace'];
+                if (next.includes(e.key)) { e.preventDefault(); go(currentIndex() + 1); }
+                else if (prev.includes(e.key)) { e.preventDefault(); go(currentIndex() - 1); }
+                else if (e.key === 'ArrowDown') { if (toggleReveal(true)) e.preventDefault(); }
+                else if (e.key === 'ArrowUp') { if (toggleReveal(false)) e.preventDefault(); }
+                else if (e.key === 'Home') { e.preventDefault(); go(0); }
+                else if (e.key === 'End') { e.preventDefault(); go(sections.length - 1); }
+            });
+
+            function updateDots() {
+                const idx = currentIndex();
+                dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            }
+            window.addEventListener('scroll', updateDots, { passive: true });
+            window.addEventListener('beforeprint', () => document.querySelectorAll('details.signal-reveal').forEach(d => d.open = true));
+            updateDots();
+        })();
+    </script>
+</body>
+</html>
