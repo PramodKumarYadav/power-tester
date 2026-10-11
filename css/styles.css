@@ -970,20 +970,42 @@ html:has(.signals-page) { scroll-snap-type: y proximity; scroll-padding-top: 64p
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  align-items: flex-end;
+  gap: 0.35rem;
   z-index: 50;
 }
-.signal-dots a { display: block; padding: 2px; }
-.signal-dots span {
+.signal-dots a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2px 2px 2px 0.75rem;
+  text-decoration: none;
+}
+.signal-dots .dot {
   display: block;
   width: 8px;
   height: 8px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--border);
   transition: var(--transition);
 }
-.signal-dots a:hover span { background: var(--text-light); }
-.signal-dots a.active span { background: var(--primary); transform: scale(1.4); }
+.signal-dots a:hover .dot { background: var(--text-light); }
+.signal-dots a.active .dot { background: var(--primary); transform: scale(1.4); }
+.signal-dots .label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: var(--transition);
+}
+.signal-dots .label b { color: var(--text-light); font-weight: 600; margin-right: 0.4rem; font-variant-numeric: tabular-nums; }
+.signal-dots a.active .label { opacity: 1; transform: none; color: var(--dark); font-weight: 600; }
+.signal-dots:hover .label { opacity: 1; transform: none; }
+.signal-dots a:hover .label { color: var(--primary); }
+.signal-dots.rail-hidden { display: none; }
+@media (max-width: 1100px) { .signal-dots .label { display: none; } }
 
 .signal-hint {
   position: fixed;
