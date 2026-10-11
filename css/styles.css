@@ -870,6 +870,7 @@ html:has(.signals-page) { scroll-snap-type: y proximity; scroll-padding-top: 64p
   color: var(--dark);
   margin-bottom: 1.75rem;
 }
+.signal-title-long { font-size: clamp(1.4rem, 2.8vw, 1.9rem); line-height: 1.25; }
 .signal-body p {
   font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   line-height: 1.6;
@@ -959,8 +960,9 @@ html:has(.signals-page) { scroll-snap-type: y proximity; scroll-padding-top: 64p
 .signal-index a { color: var(--text-muted); font-size: 1rem; }
 .signal-index a:hover { color: var(--primary); }
 .signal-index b { color: var(--text-light); font-weight: 600; font-variant-numeric: tabular-nums; margin-right: .5rem; }
-.signal-index-top { margin-top: 2rem; padding-top: 1.5rem; }
-.signal-index-top a { font-size: 1.1rem; color: var(--text); font-weight: 500; }
+.signal-index-top { margin-top: 1.5rem; padding-top: 1.25rem; }
+.signal-index-top li { margin-bottom: 0.3rem; }
+.signal-index-top a { font-size: 1rem; color: var(--text); font-weight: 500; }
 .signal-index-top a:hover { color: var(--primary); }
 
 .signal-dots {
@@ -1005,6 +1007,86 @@ html:has(.signals-page) { scroll-snap-type: y proximity; scroll-padding-top: 64p
 .signal-dots:hover .label { opacity: 1; transform: none; }
 .signal-dots a:hover .label { color: var(--primary); }
 .signal-dots.rail-hidden { display: none; }
+.signal-case { font-size: 0.95rem !important; color: var(--text-muted) !important; margin-bottom: 1rem !important; }
+.signal-benefits code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 0 .3em; }
+
+/* Before/after role diagram */
+.signal-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0.5rem 0 1.5rem;
+  max-width: 640px;
+}
+.signal-diagram-col { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; flex: 1; }
+.signal-diagram-col:last-child { flex: 0 0 auto; flex-direction: column; align-items: flex-start; }
+.signal-diagram-label {
+  flex-basis: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.1rem;
+}
+.signal-diagram .pill {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.signal-diagram .pill-primary { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+.signal-diagram .pill-muted { background: var(--primary-light); border-color: #bfdbfe; color: var(--primary); }
+.signal-diagram-arrow { color: var(--text-light); font-size: 1.1rem; flex-shrink: 0; }
+@media (max-width: 480px) {
+  .signal-diagram { flex-direction: column; align-items: flex-start; }
+  .signal-diagram-arrow { transform: rotate(90deg); }
+}
+
+/* Chapters, category labels, grouped indexes */
+.signal-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.signal-chapter { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-surface) 100%) !important; color: #fff; }
+.signal-chapter .signal-num { color: #fff; opacity: .12; }
+.signal-chapter .signal-kicker { color: #94a3b8; }
+.signal-chapter .signal-title { color: #fff; }
+.signal-chapter .signal-body p { color: #cbd5e1; }
+.signal-chapter .signal-next { background: transparent; border-color: rgba(255,255,255,.25); color: #cbd5e1; }
+.signal-chapter .signal-next:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+.signal-index-group { margin-top: 0.9rem; }
+.signal-index-group:first-child { margin-top: 0; }
+.signal-index-group a {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary) !important;
+}
+.signal-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 1.5rem 0 0.75rem;
+}
+.signal-group-label:first-child { margin-top: 0; }
+.signal-dots a.rail-heading { margin-top: 0.4rem; }
+.signal-dots a.rail-heading .label { font-size: 0.66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); }
+.signal-dots a.rail-heading .dot { width: 8px; height: 3px; border-radius: 2px; background: var(--primary); opacity: .5; }
+.signal-dots a.rail-heading.active .dot { transform: none; opacity: 1; }
+
 @media (max-width: 1100px) { .signal-dots .label { display: none; } }
 
 .signal-hint {

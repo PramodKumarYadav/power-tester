@@ -38,11 +38,16 @@
 
     <nav class="signal-dots" id="signal-rail" aria-label="Lessons">
         <a href="#00"><span class="label"><b>00</b>Start here</span><span class="dot"></span></a>
-        <a href="#01"><span class="label"><b>01</b>Your place or mine?</span><span class="dot"></span></a>
-        <a href="#02"><span class="label"><b>02</b>Your language or mine?</span><span class="dot"></span></a>
-        <a href="#03"><span class="label"><b>03</b>Your level or mine?</span><span class="dot"></span></a>
-        <a href="#04"><span class="label"><b>04</b>Your tooling or mine?</span><span class="dot"></span></a>
-        <a href="#05"><span class="label"><b>05</b>Start Monday</span><span class="dot"></span></a>
+        <a href="#fundamentals" class="rail-heading"><span class="label">Fundamentals</span><span class="dot"></span></a>
+        <a href="#01"><span class="label"><b>01</b>Automated tests: In app&rsquo;s repo or outside?</span><span class="dot"></span></a>
+        <a href="#02"><span class="label"><b>02</b>Test&rsquo;s language: Developers or QAs?</span><span class="dot"></span></a>
+        <a href="#03"><span class="label"><b>03</b>Test focus: Unit, integration or system?</span><span class="dot"></span></a>
+        <a href="#04"><span class="label"><b>04</b>Test tooling: App native or QA preferred?</span><span class="dot"></span></a>
+        <a href="#age-of-ai" class="rail-heading"><span class="label">Age of AI</span><span class="dot"></span></a>
+        <a href="#05"><span class="label"><b>05</b>Your role: Improve or evolve?</span><span class="dot"></span></a>
+        <a href="#06"><span class="label"><b>06</b>Solutions: Reuse or innovate?</span><span class="dot"></span></a>
+        <a href="#07"><span class="label"><b>07</b>Basics: Optional or essential?</span><span class="dot"></span></a>
+        <a href="#08"><span class="label"><b>08</b>Start Monday</span><span class="dot"></span></a>
     </nav>
 
     <main class="signals">
@@ -53,30 +58,49 @@
                 <p class="signal-kicker">Start here</p>
                 <h1 class="signal-title">What I know now.</h1>
                 <div class="signal-body">
-                    <p>A catalogue of lessons I wish someone had given my 24-year-old self.</p>
-                    <p class="signal-aside">The format is borrowed, with admiration, from <a href="https://37signals.com/37" target="_blank" rel="noopener">37signals</a>.</p>
+                    <p>Lessons I wish someone had given to my younger self.</p>
+                    <p class="signal-aside">The format is inspired by <a href="https://37signals.com/37" target="_blank" rel="noopener">37signals</a>.</p>
                 </div>
                 <ol class="signal-index signal-index-top" aria-label="All lessons">
-                    <li><a href="#01"><b>01.</b> Your place or mine?</a></li>
-                    <li><a href="#02"><b>02.</b> Your language or mine?</a></li>
-                    <li><a href="#03"><b>03.</b> Your level or mine?</a></li>
-                    <li><a href="#04"><b>04.</b> Your tooling or mine?</a></li>
-                    <li><a href="#05"><b>05.</b> Start Monday.</a></li>
+                    <li class="signal-index-group"><a href="#fundamentals">I. Fundamentals</a></li>
+                    <li><a href="#01"><b>01.</b> Automated tests: In app&rsquo;s repo or outside?</a></li>
+                    <li><a href="#02"><b>02.</b> Test&rsquo;s language: Developers or QAs?</a></li>
+                    <li><a href="#03"><b>03.</b> Test focus: Where should it be the most? Unit, integration or system/e2e level?</a></li>
+                    <li><a href="#04"><b>04.</b> Test tooling: App native (say Espresso/XCUITest) or QA preferred (say Appium)?</a></li>
+                    <li class="signal-index-group"><a href="#age-of-ai">II. Age of AI</a></li>
+                    <li><a href="#05"><b>05.</b> Your role: Improve or evolve?</a></li>
+                    <li><a href="#06"><b>06.</b> Solutions: Reuse or innovate?</a></li>
+                    <li><a href="#07"><b>07.</b> Basics: Optional or essential?</a></li>
+                    <li class="signal-index-group"><a href="#08">What now?</a></li>
+                    <li><a href="#08"><b>08.</b> Start Monday.</a></li>
                 </ol>
+                <a href="#fundamentals" class="signal-next" aria-label="Next: Fundamentals"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal signal-chapter" id="fundamentals">
+            <div class="signal-inner">
+                <div class="signal-num">I</div>
+                <p class="signal-kicker">Chapter one</p>
+                <h2 class="signal-title">Fundamentals.</h2>
+                <div class="signal-body">
+                    <p>Four decisions that are made once, early, and paid for every day after. Get them right and everything that follows gets easier.</p>
+                </div>
                 <a href="#01" class="signal-next" aria-label="Next: Test location"><i class="fas fa-arrow-down"></i></a>
             </div>
         </section>
 
         <section class="signal" id="01">
             <div class="signal-inner">
+                <p class="signal-eyebrow">Fundamentals</p>
                 <div class="signal-num">01</div>
-                <p class="signal-kicker">Test location. QA asks the developer:</p>
-                <h2 class="signal-title">Your place<br>or mine?</h2>
+                <p class="signal-kicker">Test location.</p>
+                <h2 class="signal-title">Automated tests:<br>In app&rsquo;s repo or outside?</h2>
                 <div class="signal-body">
                     <details class="signal-reveal">
                         <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
                         <div class="signal-reveal-content">
-                    <p><strong>Developers. In the app repo, every single time.</strong></p>
+                    <p><strong>In the app repo. Every single time.</strong></p>
                     <ul class="signal-benefits">
                         <li><strong>Solves false positives.</strong> Tests change in the same commit as the code, so a red build means a bug, not an intended change.</li>
                         <li><strong>Solves late feedback.</strong> You hear about a break on the commit that caused it, not after it reaches the test environment.</li>
@@ -84,7 +108,6 @@
                         <li><strong>Gives QAs mental space</strong> to actually test the app and write the missing tests, instead of living in maintenance hell.</li>
                         <li><strong>Solves capacity constraints.</strong> Maintenance is one of the key challenges as the test count grows. When everyone owns the tests, the burden doesn't fall on a single person.</li>
                     </ul>
-                    <p>I have written about this at length in <a href="blogs/test-location-matters.html">Test Location Matters</a>. It is the single decision that makes or breaks a test automation effort.</p>
                     <p><strong>Put the tests where the code is. Everything else follows.</strong></p>
                                         </div>
                     </details>
@@ -94,23 +117,23 @@
         </section>
         <section class="signal" id="02">
             <div class="signal-inner">
+                <p class="signal-eyebrow">Fundamentals</p>
                 <div class="signal-num">02</div>
-                <p class="signal-kicker">Test language. QA asks the developer:</p>
-                <h2 class="signal-title">Your language<br>or mine?</h2>
+                <p class="signal-kicker">Test language.</p>
+                <h2 class="signal-title">Test&rsquo;s language:<br>Developers or QAs?</h2>
                 <div class="signal-body">
                     <details class="signal-reveal">
                         <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
                         <div class="signal-reveal-content">
-                    <p><strong>Developers&rsquo;. The language the app is written in, every single time.</strong></p>
+                    <p><strong>The developers&rsquo; language. Every single time.</strong></p>
                     <ul class="signal-benefits">
                         <li><strong>Solves ownership.</strong> Developers can read, review, and fix a test written in their own language. A test in a language they do not know is a test they will never touch.</li>
                         <li><strong>Solves the two-toolchain problem.</strong> One build, one linter, one package manager, one CI job. No second ecosystem to keep alive.</li>
                         <li><strong>Solves duplication.</strong> Tests reuse the app&rsquo;s types, models, fixtures, and clients instead of rebuilding the domain in another language.</li>
                         <li><strong>Solves scale versus maintenance.</strong> When tests speak the team&rsquo;s language, the whole team maintains them, not only QA.</li>
                         <li><strong>Gives QAs a stronger skill.</strong> Learning the developers&rsquo; language makes you a better engineer, not just a better tester.</li>
-                        <li><strong>No need to hire an army of QAs</strong> who know a niche, test-only stack. Anyone on the team can contribute a test.</li>
+                        <li><strong>No need to hire an army of QAs</strong> because the number of tests grows over time and becomes too much for one person to maintain. Everyone maintains. QAs can test and add new tests.</li>
                     </ul>
-                    <p>This is why I reach for Playwright in TypeScript on a TypeScript frontend, and RestAssured in Java on a Java backend. The tool follows the language. The language follows the app.</p>
                     <p><strong>Learn their language. Then the tests belong to everyone.</strong></p>
                                         </div>
                     </details>
@@ -121,14 +144,15 @@
 
         <section class="signal" id="03">
             <div class="signal-inner">
+                <p class="signal-eyebrow">Fundamentals</p>
                 <div class="signal-num">03</div>
-                <p class="signal-kicker">Test level. Where should most tests live? QA asks the developer:</p>
-                <h2 class="signal-title">Your level<br>or mine?</h2>
+                <p class="signal-kicker">Test level.</p>
+                <h2 class="signal-title signal-title-long">Test focus: Where should it be the most?<br>Unit, integration or system/e2e level?</h2>
                 <div class="signal-body">
                     <details class="signal-reveal">
                         <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
                         <div class="signal-reveal-content">
-                    <p><strong>Developers&rsquo;. Most tests at unit and integration level. System tests only for what nothing below can see.</strong></p>
+                    <p><strong>Unit and integration. System tests only for what nothing below can see.</strong></p>
                     <ul class="signal-benefits">
                         <li><strong>Most functionality belongs at unit level.</strong> Business rules, validations, calculations, edge cases. Every branch of logic, tested in isolation, in milliseconds.</li>
                         <li><strong>Most integration issues belong at component level.</strong> Wiring, contracts, serialisation, queries, configuration. Test the seams where two parts meet, with the real parts on both sides.</li>
@@ -138,7 +162,6 @@
                         <li><strong>Leave the user journey to a human.</strong> Automation tells you whether you are building it right. Only a person walking the product tells you whether you are building the right product, and finds the UX issues on the way.</li>
                         <li><strong>Fast and, above all, reliable.</strong> A system suite that finishes in minutes and passes whenever nothing is broken. A flaky test is worse than no test: it teaches the team to ignore red.</li>
                     </ul>
-                    <p>The system tests I recommend, each walk one system journey end to end: in through the UI, down to the database, and back. Everything else lives one level down, where it runs in seconds and fails for one reason only.</p>
                     <p><strong>Push every check as low as it can go. What remains is your system suite: small, vertical, fast, and reliable.</strong></p>
                         </div>
                     </details>
@@ -149,17 +172,18 @@
 
         <section class="signal" id="04">
             <div class="signal-inner">
+                <p class="signal-eyebrow">Fundamentals</p>
                 <div class="signal-num">04</div>
-                <p class="signal-kicker">Test tooling. One cross-platform tool for QA, or the native tool each platform already has? QA asks the developer:</p>
-                <h2 class="signal-title">Your tooling<br>or mine?</h2>
+                <p class="signal-kicker">Test tooling.</p>
+                <h2 class="signal-title signal-title-long">Test tooling:<br>App native (say Espresso/XCUITest)<br>or QA preferred (say Appium)?</h2>
                 <div class="signal-body">
                     <details class="signal-reveal">
                         <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
                         <div class="signal-reveal-content">
-                    <p><strong>Developers&rsquo;. Espresso on Android, XCUITest on iOS. Two native tools over one tool in the middle. Every single time.</strong></p>
+                    <p><strong>App native. Espresso on Android, XCUITest on iOS. Two native tools over one tool in the middle. Every single time.</strong></p>
                     <ul class="signal-benefits">
                         <li><strong>&ldquo;One tool&rdquo; is really three.</strong> Appium puts a server, a driver, and a client library between your test and the app. Every layer is a place to be slow, to be flaky, and to lag behind the next OS release.</li>
-                        <li><strong>Google builds Espresso. Apple builds XCUITest. Dan Cuellar created Appium. And no, it is not the same as Linux or Git.</strong> When the company that builds the platform also builds the test tool, the tool knows the platform from the inside. It ships with the OS, it is updated the day the platform changes, and it is not going away.</li>
+                        <li><strong>Google builds Espresso. Apple builds XCUITest. One man created Appium. And no, it is not the same as Linux or Git.</strong> When the company that builds the platform also builds the test tool, the tool knows the platform from the inside. It ships with the OS, it is updated the day the platform changes, and it is not going away.</li>
                         <li><strong>Same repo, same language, same build.</strong> The test sits beside the screen it tests, in Kotlin or Swift, and runs with the developers&rsquo; build in CI. Lessons 01, 02, and 03 come for free.</li>
                         <li><strong>Developers already know them.</strong> Android and iOS developers learn Espresso and XCUITest as part of their craft. Nobody has to learn a WebDriver dialect to help QA.</li>
                         <li><strong>Fast and reliable.</strong> In-process, no network hop, no session to set up. Hundreds of native UI tests finish in the time a bridge takes to launch.</li>
@@ -170,32 +194,157 @@
                         </div>
                     </details>
                 </div>
-                <a href="#05" class="signal-next" aria-label="Next: Start Monday"><i class="fas fa-arrow-down"></i></a>
+                <a href="#age-of-ai" class="signal-next" aria-label="Next: Age of AI"><i class="fas fa-arrow-down"></i></a>
             </div>
         </section>
 
-        <section class="signal signal-last" id="05">
+        <section class="signal signal-chapter" id="age-of-ai">
             <div class="signal-inner">
+                <div class="signal-num">II</div>
+                <p class="signal-kicker">Chapter two</p>
+                <h2 class="signal-title">Age of AI.</h2>
+                <div class="signal-body">
+                    <p>AI: Threat. Opportunity. Both.</p>
+                </div>
+                <a href="#05" class="signal-next" aria-label="Next: Lesson 05"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="05">
+            <div class="signal-inner">
+                <p class="signal-eyebrow">Age of AI</p>
                 <div class="signal-num">05</div>
+                <p class="signal-kicker">Harness the super power.</p>
+                <h2 class="signal-title">Your role:<br>Improve or evolve?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Don&rsquo;t just improve. Evolve.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>You can build apps now.</strong> Frontend, backend, deployment. Six months ago I could not build a full-stack app. Today I have more than one running, intended for profit and for education: <a href="https://staging.vatezpz.com/" target="_blank" rel="noopener">VATEzPz</a>, a product I am taking to market, and <a href="https://github.com/power-tester/taskflow" target="_blank" rel="noopener">TaskFlow</a>, which demonstrates trunk-based development with feature flags.</li>
+                        <li><strong>The old limit was the brain.</strong> The field was too vast for one head to hold, so engineering split into business analysts, frontend and backend developers, QAs, architects, DevOps, security. Each held a fragment.</li>
+                        <li><strong>That limit is gone.</strong> Agents carry the knowledge and the skills. You carry the judgment.</li>
+                        <li><strong>Agents work best with full context.</strong> Knowledge scattered across seven roles is exactly what they struggle with. One person who understands the whole thing, end to end, gets the most out of them.</li>
+                        <li><strong>The industry is already moving.</strong> A quarter of <a href="https://www.cnbc.com/2025/03/15/y-combinator-startups-are-fastest-growing-in-fund-history-because-of-ai.html" target="_blank" rel="noopener">Y Combinator&rsquo;s recent startups</a> had most of their code written by AI, and some reach ten million in revenue with fewer than ten people. A <a href="https://papers.ssrn.com/abstract=6905079" target="_blank" rel="noopener">Harvard and INSEAD study</a> finds AI-native companies are a quarter smaller than their peers, with more engineers and fewer layers. A handful of people now ship what used to take a department.</li>
+                    </ul>
+                    <div class="signal-diagram" aria-label="Before: seven fragmented roles. After: one full-stack engineer with agents.">
+                        <div class="signal-diagram-col">
+                            <span class="signal-diagram-label">Before</span>
+                            <span class="pill">Business analyst</span>
+                            <span class="pill">Frontend dev</span>
+                            <span class="pill">Backend dev</span>
+                            <span class="pill">QA</span>
+                            <span class="pill">Architect</span>
+                            <span class="pill">DevOps</span>
+                            <span class="pill">Security</span>
+                        </div>
+                        <div class="signal-diagram-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="signal-diagram-col">
+                            <span class="signal-diagram-label">Now</span>
+                            <span class="pill pill-primary">Full-stack engineer</span>
+                            <span class="pill pill-muted">+ agents</span>
+                        </div>
+                    </div>
+                    <p><strong>The limitations of before do not exist anymore. You can learn anything. Build anything.</strong></p>
+                        </div>
+                    </details>
+                </div>
+                <a href="#06" class="signal-next" aria-label="Next: Solutions"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="06">
+            <div class="signal-inner">
+                <p class="signal-eyebrow">Age of AI</p>
+                <div class="signal-num">06</div>
+                <p class="signal-kicker">Think from first principles.</p>
+                <h2 class="signal-title">Solutions:<br>Reuse or innovate?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Reuse is fine. Reuse without asking why is not. Look at old problems with fresh eyes.</strong></p>
+                    <p class="signal-case">Case study: <a href="https://github.com/PramodKumarYadav/agentic-semver" target="_blank" rel="noopener">agentic-semver</a>, semantic versioning rebuilt from the question up.</p>
+                    <ul class="signal-benefits">
+                        <li><strong>The reused answer.</strong> Conventional Commits. Prefix every commit with <code>feat:</code>, <code>fix:</code> or <code>BREAKING CHANGE</code>, and let a tool count prefixes. Adopted everywhere because it exists, not because anyone asked whether it is right.</li>
+                        <li><strong>Ask what a version actually is.</strong> A statement about what changed for the people who depend on your code. Not a record of how a developer typed a commit message at six in the evening.</li>
+                        <li><strong>So read the change, not the message.</strong> agentic-semver sends the pull request diff to a model, which classifies it as patch, minor or major and drafts the changelog entry. No convention to learn, nothing to forget, and a squash merge cannot lose it.</li>
+                        <li><strong>Keep the human on the irreversible part.</strong> The recommendation lands as a label on the pull request. Disagree? Swap the label. The label wins. The number is reviewed by a person, the prose is written by the machine.</li>
+                        <li><strong>Fix the race nobody mentions.</strong> Two open pull requests read the same baseline and compute the same next version. Whichever merges second overwrites a release or is silently skipped. So decide on the pull request, but write after the merge, serially, against main as it actually stands.</li>
+                        <li><strong>The result.</strong> One action on the pull request, one after the merge, one release. Seven ecosystems&rsquo; version files detected automatically. No bot commit ever touches your branch.</li>
+                    </ul>
+                    <p><strong>First principles is not about ignoring what exists. It is about earning the right to use it.</strong></p>
+                        </div>
+                    </details>
+                </div>
+                <a href="#07" class="signal-next" aria-label="Next: Basics"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal" id="07">
+            <div class="signal-inner">
+                <p class="signal-eyebrow">Age of AI</p>
+                <div class="signal-num">07</div>
+                <p class="signal-kicker">The super power needs a pilot.</p>
+                <h2 class="signal-title">Basics:<br>Optional or essential?</h2>
+                <div class="signal-body">
+                    <details class="signal-reveal">
+                        <summary><span class="when-closed"><i class="fas fa-chevron-down"></i> My recommendation</span><span class="when-open"><i class="fas fa-chevron-up"></i> Hide recommendation</span></summary>
+                        <div class="signal-reveal-content">
+                    <p><strong>Essential. AI amplifies what you already know. Learn the basics, and it becomes a super power. Skip them, and it becomes confident nonsense you cannot judge.</strong></p>
+                    <ul class="signal-benefits">
+                        <li><strong>Continuous delivery.</strong> Small changes, merged often, shipped on every green build. This is the plumbing that turns AI-written code into something a user can touch. Start at <a href="https://continuousdelivery.com/" target="_blank" rel="noopener">continuousdelivery.com</a>, the source the rest of the industry quotes.</li>
+                        <li><strong>Branching strategy.</strong> Trunk-based development with feature flags. Long-lived branches are where agent output goes to rot. Start at <a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener">trunkbaseddevelopment.com</a>. I wrote about it <a href="blogs/ci-cd-with-feature-toggles.html">with flags</a> and <a href="blogs/ci-cd-without-feature-toggles.html">without</a>, and <a href="https://github.com/power-tester/taskflow" target="_blank" rel="noopener">TaskFlow</a> shows it running.</li>
+                        <li><strong>Programming fundamentals and clean code.</strong> You will now read far more code than you write. Reading well is the skill. <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank" rel="noopener"><em>Clean Code</em></a>, <a href="https://www.amazon.com/Head-First-Java-Brain-Friendly-Guide/dp/1491910771" target="_blank" rel="noopener"><em>Head First Java</em></a> and <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467" target="_blank" rel="noopener"><em>Functional Programming in Java</em></a> taught me to tell good code from code that merely runs.</li>
+                        <li><strong>DevOps.</strong> Git, Docker, the command line. The agent can write the Dockerfile. You have to know when it is wrong. <a href="https://git-scm.com/docs/user-manual" target="_blank" rel="noopener">The Git manual</a>, <a href="https://www.manning.com/books/learn-docker-in-a-month-of-lunches" target="_blank" rel="noopener"><em>Learn Docker in a Month of Lunches</em></a> and <a href="https://linuxcommand.org/tlcl.php" target="_blank" rel="noopener"><em>The Linux Command Line</em></a> are the three I keep coming back to.</li>
+                        <li><strong>Lifecycle management.</strong> Where a change is in its life, from idea to production to retirement, tells you what to ask the agent for next. Without that map, every prompt starts from zero.</li>
+                        <li><strong>The pattern underneath.</strong> Every item on this list is cheap to learn now, because the same agent that writes your code will explain any of them for as long as you keep asking. What it cannot do is decide for you which answer is right.</li>
+                    </ul>
+                    <p>The full list is on my <a href="books.html">books page</a>. Not one of them is about AI. Every one of them makes AI more useful.</p>
+                    <p><strong>The super power has no judgment of its own. Yours comes from the basics.</strong></p>
+                        </div>
+                    </details>
+                </div>
+                <a href="#08" class="signal-next" aria-label="Next: Start Monday"><i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="signal signal-last" id="08">
+            <div class="signal-inner">
+                <div class="signal-num">08</div>
                 <p class="signal-kicker">What now?</p>
                 <h2 class="signal-title">Start Monday.</h2>
                 <div class="signal-body">
+                    <h3 class="signal-group-label">Fundamentals</h3>
                     <ol class="signal-actions">
                         <li><span>Locate</span> Open your test repo. If it is not the application repo, start the move this sprint.</li>
                         <li><span>Speak</span> If your tests are in a different language than the app, write the next one in the app&rsquo;s language.</li>
                         <li><span>Level</span> Count your tests per level. If the system layer is the biggest, write the next test one level down.</li>
                         <li><span>Tool</span> Before adopting a cross-platform test tool, ask the developers which tool they would use. Use that.</li>
                     </ol>
+                    <h3 class="signal-group-label">Age of AI</h3>
+                    <ol class="signal-actions">
+                        <li><span>Evolve</span> Build one full-stack app end to end, with an agent beside you. Deploy it. Then show your team.</li>
+                        <li><span>Question</span> Pick one tool your team uses because everyone does. Write down the problem it solves. Then ask whether that is still the problem you have.</li>
+                        <li><span>Basics</span> Pick one: continuous delivery, trunk-based development, or clean code. Read one book or one post on it this month. Ask the agent to explain the rest.</li>
+                    </ol>
                     <p>That is it. Learn, share, have fun. If you want to spar on any of these, I offer <a href="community.html">free 20-minute sessions</a> for the QA community.</p>
                 </div>
 
                 <ol class="signal-index" aria-label="All sections">
                     <li><a href="#00"><b>00.</b> Start here</a></li>
-                    <li><a href="#01"><b>01.</b> Your place or mine? In the app repo, every single time.</a></li>
-                    <li><a href="#02"><b>02.</b> Your language or mine? The app&rsquo;s language, every single time.</a></li>
-                    <li><a href="#03"><b>03.</b> Your level or mine? Push every check as low as it can go.</a></li>
-                    <li><a href="#04"><b>04.</b> Your tooling or mine? Two native tools over one in the middle.</a></li>
-                    <li><a href="#05"><b>05.</b> Start Monday.</a></li>
+                    <li class="signal-index-group"><a href="#fundamentals">I. Fundamentals</a></li>
+                    <li><a href="#01"><b>01.</b> Automated tests: In app&rsquo;s repo or outside? In the app&rsquo;s repo, every single time.</a></li>
+                    <li><a href="#02"><b>02.</b> Test&rsquo;s language: Developers or QAs? Developers, every single time.</a></li>
+                    <li><a href="#03"><b>03.</b> Test focus: Unit, integration or system/e2e? Push every check as low as it can go.</a></li>
+                    <li><a href="#04"><b>04.</b> Test tooling: App native or QA preferred? Two native tools over one in the middle.</a></li>
+                    <li class="signal-index-group"><a href="#age-of-ai">II. Age of AI</a></li>
+                    <li><a href="#05"><b>05.</b> Your role: Improve or evolve? Don&rsquo;t just improve. Evolve.</a></li>
+                    <li><a href="#06"><b>06.</b> Solutions: Reuse or innovate?</a></li>
+                    <li><a href="#07"><b>07.</b> Basics: Optional or essential? Essential. They are what makes AI usable.</a></li>
+                    <li class="signal-index-group"><a href="#08">What now?</a></li>
+                    <li><a href="#08"><b>08.</b> Start Monday.</a></li>
                 </ol>
             </div>
         </section>
