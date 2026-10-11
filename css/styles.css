@@ -831,3 +831,211 @@ article li { margin-bottom: 0.4rem; }
   .btn { width: 100%; justify-content: center; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- Lessons (37signals-style essay page) ---------- */
+html:has(.signals-page) { scroll-snap-type: y proximity; scroll-padding-top: 64px; }
+.signals { background: var(--surface); }
+.signal {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  scroll-snap-align: start;
+  border-bottom: 1px solid var(--border);
+}
+.signal:nth-of-type(even) { background: var(--bg); }
+.signal-last { border-bottom: none; }
+.signal-inner { max-width: 720px; margin: 0 auto; width: 100%; position: relative; }
+.signal-num {
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  opacity: .15;
+  margin-bottom: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+.signal-kicker {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.signal-title {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--dark);
+  margin-bottom: 1.75rem;
+}
+.signal-body p {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+.signal-body p:last-child { margin-bottom: 0; }
+.signal-benefits { list-style: none; margin: 0 0 1.25rem; max-width: 640px; }
+.signal-benefits li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.55;
+  color: var(--text);
+}
+.signal-benefits li::before { content: '\2192'; position: absolute; left: 0; color: var(--primary); font-weight: 600; }
+.signal-benefits strong { color: var(--dark); }
+
+/* Reveal-the-answer disclosure */
+.signal-reveal summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
+}
+.signal-reveal summary::-webkit-details-marker { display: none; }
+.signal-reveal summary:hover { background: var(--primary); color: #fff; }
+.signal-reveal summary:focus-visible { outline: 3px solid rgba(37,99,235,.3); outline-offset: 2px; }
+.signal-reveal .when-open { display: none; }
+.signal-reveal[open] .when-open { display: inline-flex; align-items: center; gap: 0.5rem; }
+.signal-reveal[open] .when-closed { display: none; }
+.signal-reveal[open] summary { margin-bottom: 1.5rem; border-color: var(--border); color: var(--text-muted); }
+.signal-reveal[open] summary:hover { background: var(--bg-alt); color: var(--text); }
+@keyframes reveal-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.signal-reveal[open] .signal-reveal-content { animation: reveal-in .3s ease; }
+.signal-body strong { color: var(--dark); font-weight: 700; }
+.signal-body a { text-decoration: underline; text-decoration-color: rgba(37,99,235,.35); text-underline-offset: 3px; }
+.signal-body a:hover { text-decoration-color: var(--primary); }
+.signal-aside { font-size: 0.95rem !important; color: var(--text-muted) !important; }
+.signal-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: 2.25rem;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  background: var(--surface);
+  transition: var(--transition);
+}
+.signal-next:hover { color: #fff; background: var(--primary); border-color: var(--primary); transform: translateY(2px); }
+
+.signal-actions { list-style: none; counter-reset: none; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.signal-actions li {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--text);
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--primary);
+  max-width: 640px;
+}
+.signal-actions li span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.signal-index { list-style: none; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.signal-index li { margin-bottom: 0.5rem; }
+.signal-index a { color: var(--text-muted); font-size: 1rem; }
+.signal-index a:hover { color: var(--primary); }
+.signal-index b { color: var(--text-light); font-weight: 600; font-variant-numeric: tabular-nums; margin-right: .5rem; }
+.signal-index-top { margin-top: 2rem; padding-top: 1.5rem; }
+.signal-index-top a { font-size: 1.1rem; color: var(--text); font-weight: 500; }
+.signal-index-top a:hover { color: var(--primary); }
+
+.signal-dots {
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  z-index: 50;
+}
+.signal-dots a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2px 2px 2px 0.75rem;
+  text-decoration: none;
+}
+.signal-dots .dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--border);
+  transition: var(--transition);
+}
+.signal-dots a:hover .dot { background: var(--text-light); }
+.signal-dots a.active .dot { background: var(--primary); transform: scale(1.4); }
+.signal-dots .label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: var(--transition);
+}
+.signal-dots .label b { color: var(--text-light); font-weight: 600; margin-right: 0.4rem; font-variant-numeric: tabular-nums; }
+.signal-dots a.active .label { opacity: 1; transform: none; color: var(--dark); font-weight: 600; }
+.signal-dots:hover .label { opacity: 1; transform: none; }
+.signal-dots a:hover .label { color: var(--primary); }
+.signal-dots.rail-hidden { display: none; }
+@media (max-width: 1100px) { .signal-dots .label { display: none; } }
+
+.signal-hint {
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  z-index: 50;
+}
+.signal-hint kbd {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 .35rem;
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .signal { min-height: auto; padding: 3.5rem 1.5rem; }
+  .signal-title { margin-bottom: 1.5rem; }
+  .signal-next { margin-top: 2rem; }
+  .signal-dots, .signal-hint { display: none; }
+}
+
+@media print {
+  .signals-page .site-header, .signals-page .site-footer, .signal-dots, .signal-hint, .signal-next { display: none !important; }
+  .signal { min-height: auto; page-break-after: always; border: none; background: #fff; }
+  .signal-reveal summary { display: none; }
+  .signal-last { page-break-after: auto; }
+}
